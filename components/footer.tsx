@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Terminal, Github, Mail, Heart, ArrowUp, Cpu, Zap } from "lucide-react"
+import { Terminal, Github, Mail, Heart, ArrowUp, Cpu, Zap, Sun, Moon } from "lucide-react"
+import { useTheme } from "next-themes"
 
 const quickLinks = [
   { label: "Inicio", href: "#hero" },
@@ -67,6 +68,12 @@ export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <footer className="relative border-t border-border/50 overflow-hidden">
@@ -178,6 +185,20 @@ export function Footer() {
                 Remoto / Global
               </span>
             </div>
+            {/* Theme toggle in footer */}
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="flex items-center gap-2 w-full px-4 py-2.5 border border-border/50 rounded-md text-muted-foreground hover:text-neon hover:border-neon/30 transition-all duration-300 font-mono text-xs"
+                aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+              >
+                {theme === 'dark' ? (
+                  <><Sun className="h-3.5 w-3.5" />Modo claro</>
+                ) : (
+                  <><Moon className="h-3.5 w-3.5" />Modo oscuro</>
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>

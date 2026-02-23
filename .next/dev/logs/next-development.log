@@ -1,123 +1,81 @@
-[00:00:02.357] Server  LOG     ✓ Ready in 1780ms
-[00:00:09.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:09.709] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:09.709] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:09.709] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771804236978} /_vercel/insights/view
-[00:18:27.244] Server  LOG     ✓ Compiled in 689ms
-[00:21:31.903] Server  LOG     ✓ Compiled in 305ms
-[00:24:59.756] Server  LOG     ✓ Compiled in 409ms
-[00:25:21.130] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:25:21.298] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:25:21.298] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:25:21.298] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/#contact color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771805748560} /_vercel/insights/view
-[00:25:25.336] Server  LOG     ✓ Compiled in 179ms
-[00:25:35.067] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:25:35.149] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:25:35.149] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:25:35.149] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/#contact color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771805762422} /_vercel/insights/view
-[00:25:52.135] Server  LOG     ✓ Compiled in 169ms
-[00:26:07.101] Server  LOG     ✓ Compiled in 126ms
-[00:26:16.772] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:17.059] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:26:17.059] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:26:17.059] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/#contact color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771805804338} /_vercel/insights/view
-[00:26:30.418] Server  LOG     ✓ Compiled in 528ms
-[00:27:01.727] Server  LOG     ✓ Compiled in 181ms
-[00:27:33.705] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:33.963] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:27:33.963] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:27:33.963] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/#contact color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771805881205} /_vercel/insights/view
-[00:31:35.607] Server  LOG     ✓ Compiled in 970ms
-[00:32:01.415] Server  LOG     ✓ Compiled in 501ms
-[00:32:11.740] Server  LOG     ✓ Compiled in 722ms
-[00:32:21.994] Server  WARN    Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
-[00:32:23.107] Server  LOG     ✓ Compiled in 157ms
-[00:37:30.577] Server  LOG     ✓ Compiled in 331ms
-[00:38:06.671] Server  LOG     ✓ Compiled in 1142ms
-[00:38:07.316] Browser ERROR   ./components/server-rack-section.tsx:66:1
-Parsing ecmascript source code failed
-  64 |   }
-  65 |
-> 66 | export function ServerRackSection() {
-     | ^^^^^^
-  67 |   const ref = useRef<HTMLDivElement>(null)
-  68 |   const isInView = useInView(ref, { threshold: 0.1 })
-  69 |
+[00:00:02.646] Server  LOG     ✓ Ready in 1830ms
+[00:00:05.941] Server  LOG     ○ Compiling / ...
+[00:00:11.263] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.574] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:11.574] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:11.574] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771815194828} /_vercel/insights/view
+[00:09:18.698] Server  LOG     ✓ Compiled in 703ms
+[00:10:02.173] Server  LOG     ✓ Compiled in 357ms
+[00:10:06.805] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:06.934] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:06.934] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:10:06.934] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771815790219} /_vercel/insights/view
+[00:10:45.620] Server  LOG     ✓ Compiled in 202ms
+[00:11:22.498] Server  LOG     ✓ Compiled in 219ms
+[00:11:36.368] Server  LOG     ✓ Compiled in 204ms
+[00:11:36.611] Browser ERROR   ./components/footer.tsx:78:10
+Ecmascript file had an error
+  76 |   }, [])
+  77 |   const { theme, setTheme } = useTheme()
+> 78 |   const [mounted, setMounted] = useState(false)
+     |          ^^^^^^^
+  79 |
+  80 |   useEffect(() => {
+  81 |     setMounted(true)
 
-'import', and 'export' cannot be used outside of module code
+the name `mounted` is defined multiple times
 
 Import trace:
   Server Component:
-    ./components/server-rack-section.tsx
+    ./components/footer.tsx
     ./app/page.tsx
-[00:39:22.023] Server  LOG     ✓ Compiled in 512ms
-[00:40:11.700] Server  LOG     ✓ Compiled in 146ms
-[00:40:23.276] Server  LOG     ✓ Compiled in 113ms
-[00:52:22.897] Server  LOG     ✓ Compiled in 254ms
-[00:53:01.900] Server  LOG     ✓ Compiled in 198ms
-[00:53:34.498] Server  LOG     ✓ Compiled in 197ms
-[00:53:50.172] Server  LOG     ✓ Compiled in 172ms
-[00:56:27.170] Server  LOG     ✓ Compiled in 338ms
-[00:56:57.008] Server  LOG     ✓ Compiled in 257ms
-[00:58:22.411] Server  LOG     ✓ Compiled in 472ms
-[01:17:37.743] Server  LOG     ✓ Compiled in 624ms
-[01:17:38.113] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:11:36.611] Browser ERROR   ./components/footer.tsx:78:19
+Ecmascript file had an error
+  76 |   }, [])
+  77 |   const { theme, setTheme } = useTheme()
+> 78 |   const [mounted, setMounted] = useState(false)
+     |                   ^^^^^^^^^^
+  79 |
+  80 |   useEffect(() => {
+  81 |     setMounted(true)
 
-Check the render method of `ProjectsSection`.
-[01:18:10.000] Server  LOG     ✓ Compiled in 686ms
-[01:18:10.353] Browser ERROR   ./components/projects-section.tsx:96:26
-Parsing ecmascript source code failed
-  94 |                       </div>
-  95 |                     </div>
-> 96 |                     <div className="flex items-center gap-3">
-     |                          ^^^^^^^^^
-  97 |                       <a
-  98 |                         href={project.github}
-  99 |                         className="text-muted-foreground hover:text-neon transition-colors duration-300"
-
-Expected '</', got 'ident'
+the name `setMounted` is defined multiple times
 
 Import trace:
   Server Component:
-    ./components/projects-section.tsx
+    ./components/footer.tsx
     ./app/page.tsx
-[01:18:18.952] Server  LOG     ✓ Compiled in 1038ms
-[01:18:19.139] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:18:20.452] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/# color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771808927164} /_vercel/insights/view
-[01:18:22.985] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:18:23.873] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:18:23.873] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:18:23.873] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771808930623} /_vercel/insights/view
-[01:19:09.901] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:19:10.364] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:19:10.364] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:19:10.364] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771808977603} /_vercel/insights/view
-[01:21:47.237] Server  LOG     ✓ Compiled in 398ms
-[01:22:05.571] Server  LOG     ✓ Compiled in 658ms
-[01:25:04.137] Server  LOG     ✓ Compiled in 432ms
-[01:26:37.137] Server  LOG     ✓ Compiled in 779ms
-[01:26:46.002] Server  WARN    Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
-[01:26:47.407] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:26:47.788] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:26:47.788] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:26:47.789] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771809434969} /_vercel/insights/view
-[01:27:21.826] Server  LOG     ✓ Compiled in 247ms
-[01:28:52.693] Server  LOG     ✓ Compiled in 328ms
-[01:29:04.648] Server  LOG     ✓ Compiled in 124ms
-[01:29:34.771] Server  LOG     ✓ Compiled in 415ms
-[01:29:50.231] Server  LOG     ✓ Compiled in 219ms
-[01:31:27.763] Server  WARN    Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
-[01:31:45.742] Server  LOG     ✓ Compiled in 220ms
-[01:32:14.656] Server  LOG     ✓ Compiled in 157ms
-[01:32:30.297] Server  LOG     ✓ Compiled in 333ms
-[01:32:56.880] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:32:57.197] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:32:57.198] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:32:57.198] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/#contact color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contact","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771809804401} /_vercel/insights/view
-[01:33:06.645] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:33:06.912] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:33:06.912] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:33:06.912] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/#contact color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contact","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771809814140} /_vercel/insights/view
+[00:11:36.611] Browser ERROR   ./components/footer.tsx:77:18
+Ecmascript file had an error
+  75 |     setMounted(true)
+  76 |   }, [])
+> 77 |   const { theme, setTheme } = useTheme()
+     |                  ^^^^^^^^
+  78 |   const [mounted, setMounted] = useState(false)
+  79 |
+  80 |   useEffect(() => {
+
+the name `setTheme` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./components/footer.tsx
+    ./app/page.tsx
+[00:11:36.611] Browser ERROR   ./components/footer.tsx:77:11
+Ecmascript file had an error
+  75 |     setMounted(true)
+  76 |   }, [])
+> 77 |   const { theme, setTheme } = useTheme()
+     |           ^^^^^
+  78 |   const [mounted, setMounted] = useState(false)
+  79 |
+  80 |   useEffect(() => {
+
+the name `theme` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./components/footer.tsx
+    ./app/page.tsx
+[00:12:21.287] Server  LOG     ✓ Compiled in 268ms
+[00:13:10.395] Server  LOG     ✓ Compiled in 507ms

@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Terminal, Menu, X } from "lucide-react"
+import { Terminal, Menu, X, Sun, Moon } from "lucide-react"
+import { useTheme } from "next-themes"
 
 const navItems = [
   { label: "Inicio", href: "#hero" },
@@ -16,11 +17,17 @@ const navItems = [
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    setMounted(true)
   }, [])
 
   return (
@@ -63,6 +70,21 @@ export function Navigation() {
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+
+        {/* Theme toggle */}
+        <button
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          className="hidden md:flex items-center justify-center w-9 h-9 rounded-md border border-border bg-secondary/50 text-muted-foreground hover:text-neon hover:border-neon/30 transition-all duration-300"
+          aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+        >
+          {mounted && (
+            theme === 'dark' ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )
+          )}
+        </button>
       </nav>
 
       {/* Mobile nav */}
@@ -82,6 +104,25 @@ export function Navigation() {
               </li>
             ))}
           </ul>
+          {/* Theme toggle for mobile */}
+          <div className="px-6 pb-4">
+            <button
+              onClick={() => {
+                setTheme(theme === 'dark' ? 'light' : 'dark')
+                setMobileOpen(false)
+              }}
+              className="flex items-center gap-2 w-full px-4 py-2.5 border border-border rounded-md text-muted-foreground hover:text-neon hover:border-neon/30 transition-all duration-300 font-mono text-sm"
+              aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+            >
+              {mounted && (
+                theme === 'dark' ? (
+                  <><Sun className="h-4 w-4" />Modo claro</>
+                ) : (
+                  <><Moon className="h-4 w-4" />Modo oscuro</>
+                )
+              )}
+            </button>
+          </div>
         </div>
       )}
     </header>
