@@ -279,21 +279,11 @@
   animation: gridPulse 4s ease-in-out infinite;
 }
 
-/* Smooth theme transition */
-* {
+/* Smooth theme transition for color properties only */
+body, main, section, div, span, p, a, button, input, textarea {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Exclude animations from transition when theme changes */
-.dark * {
-  transition-property: none;
-}
-
-.dark * {
-  animation-duration: 0s !important;
-  animation-delay: 0s !important;
 }
 
 /* Scrollbar styling - Light mode */

@@ -1974,10 +1974,6 @@
     overflow-y: auto;
   }
 
-  .scroll-smooth {
-    scroll-behavior: smooth;
-  }
-
   .rounded {
     border-radius: .25rem;
   }
@@ -7189,16 +7185,10 @@
   animation: 4s ease-in-out infinite gridPulse;
 }
 
-* {
+body, main, section, div, span, p, a, button, input, textarea {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: .2s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-}
-
-.dark * {
-  transition-property: none;
-  animation-duration: 0s !important;
-  animation-delay: 0s !important;
 }
 
 ::-webkit-scrollbar {
