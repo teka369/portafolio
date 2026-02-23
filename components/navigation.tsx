@@ -14,6 +14,10 @@ const navItems = [
   { label: "Contacto", href: "#contact" },
 ]
 
+const desktopOnlyItems = [
+  { label: "Juegos", href: "/games" },
+]
+
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -60,6 +64,18 @@ export function Navigation() {
               </a>
             </li>
           ))}
+          {desktopOnlyItems.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                className="font-mono text-sm text-muted-foreground hover:text-neon transition-colors duration-300 relative group"
+              >
+                <span className="text-neon/60 mr-1">{">"}</span>
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-neon transition-all duration-300 group-hover:w-full" />
+              </a>
+            </li>
+          ))}
         </ul>
 
         {/* Mobile toggle */}
@@ -87,7 +103,7 @@ export function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile nav */}
+      {/* Mobile nav - NO games link */}
       {mobileOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-neon/10">
           <ul className="flex flex-col px-6 py-4 gap-4">

@@ -45,6 +45,24 @@
       "regex": "^/api/contact(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/contact(?:/)?$"
+    },
+    {
+      "page": "/games",
+      "regex": "^/games(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/games(?:/)?$"
+    },
+    {
+      "page": "/games/pong",
+      "regex": "^/games/pong(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/games/pong(?:/)?$"
+    },
+    {
+      "page": "/games/space-defender",
+      "regex": "^/games/space\\-defender(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/games/space\\-defender(?:/)?$"
     }
   ],
   "dataRoutes": [],

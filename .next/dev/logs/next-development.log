@@ -1,6 +1,6 @@
-[00:00:04.023] Server  LOG     ✓ Ready in 2.8s
-[00:00:10.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:10.830] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:02.970] Server  LOG     ✓ Ready in 1644ms
+[00:00:42.973] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.320] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -43,6 +43,1596 @@ It can also happen if the client has a browser extension installed which messes 
                   ...
       ...
 
-[00:00:11.009] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:11.009] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:11.009] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771851267410} /_vercel/insights/view
+[00:00:43.540] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:43.540] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:43.540] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771855911055} /_vercel/insights/view
+[00:00:47.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:47.814] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:47.814] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[00:00:47.814] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771855915214} /_vercel/insights/view
+[00:00:49.095] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771855916590} /_vercel/insights/view
+[00:02:22.650] Server  LOG     ✓ Compiled in 551ms
+[00:02:23.332] Server  ERROR   ⨯ ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+
+
+[00:02:23.469] Browser ERROR   ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+[00:02:24.470] Browser ERROR   ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+[00:02:26.364] Server  LOG     ○ Compiling /_error ...
+[00:02:26.459] Browser ERROR   ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+[00:02:26.459] Browser ERROR   ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+[00:02:29.651] Browser ERROR   uncaughtError: Error: ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+
+
+[00:02:30.472] Browser ERROR   ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+[00:02:30.472] Browser ERROR   ./app/games/pong/page.tsx:87:13
+Parsing ecmascript source code failed
+  85 |   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
+  86 |       ballY: CANVAS_HEIGHT / 2,
+> 87 |       ballVX: 0,
+     |             ^
+  88 |       ballVY: 0,
+  89 |       playerScore: 0,
+  90 |       aiScore: 0,
+
+Expected ';', '}' or <eof>
+[00:02:50.539] Server  LOG     ✓ Compiled in 460ms
+[00:02:54.698] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:54.699] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:54.699] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games/pong","route":"/games/pong"}
+[00:02:54.699] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856042119} /_vercel/insights/view
+[00:02:54.745] Server  LOG     ✓ Compiled in 4ms
+[00:12:03.953] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856591481} /_vercel/insights/view
+[00:12:06.186] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856593717} /_vercel/insights/view
+[00:12:16.844] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856604371} /_vercel/insights/view
+[00:12:19.010] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856606535} /_vercel/insights/view
+[00:12:20.795] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856608319} /_vercel/insights/view
+[00:12:30.703] Server  LOG     ✓ Compiled in 382ms
+[00:12:36.554] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856624086} /_vercel/insights/view
+[00:13:39.932] Server  LOG     ✓ Compiled in 285ms
+[00:16:44.760] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856872286} /_vercel/insights/view
+[00:16:45.965] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856873498} /_vercel/insights/view
+[00:16:52.711] Server  LOG     ✓ Compiled in 501ms
+[00:16:53.169] Server  ERROR   ⨯ ./app/games/space-defender/page.tsx:231:20
+Parsing ecmascript source code failed
+  229 |         state.enemies = state.enemies
+  230 |             bullets: [],
+> 231 |             enemies: [],
+      |                    ^
+  232 |             particles: [],
+  233 |             score: 0,
+  234 |             lives: 3,
+
+Expected ';', '}' or <eof>
+
+
+[00:16:55.206] Browser ERROR   uncaughtError: Error: ./app/games/space-defender/page.tsx:231:20
+Parsing ecmascript source code failed
+  229 |         state.enemies = state.enemies
+  230 |             bullets: [],
+> 231 |             enemies: [],
+      |                    ^
+  232 |             particles: [],
+  233 |             score: 0,
+  234 |             lives: 3,
+
+Expected ';', '}' or <eof>
+
+
+[00:16:56.447] Browser ERROR   ./app/games/space-defender/page.tsx:231:20
+Parsing ecmascript source code failed
+  229 |         state.enemies = state.enemies
+  230 |             bullets: [],
+> 231 |             enemies: [],
+      |                    ^
+  232 |             particles: [],
+  233 |             score: 0,
+  234 |             lives: 3,
+
+Expected ';', '}' or <eof>
+[00:16:56.447] Browser ERROR   ./app/games/space-defender/page.tsx:231:20
+Parsing ecmascript source code failed
+  229 |         state.enemies = state.enemies
+  230 |             bullets: [],
+> 231 |             enemies: [],
+      |                    ^
+  232 |             particles: [],
+  233 |             score: 0,
+  234 |             lives: 3,
+
+Expected ';', '}' or <eof>
+[00:17:26.317] Server  LOG     ✓ Compiled in 187ms
+[00:17:27.501] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:17:27.864] Server  LOG     ✓ Compiled in 0ms
+[00:17:29.338] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:29.338] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:17:29.338] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games/space-defender","route":"/games/space-defender"}
+[00:17:29.338] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771856916736} /_vercel/insights/view
+[00:24:28.495] Server  LOG     ✓ Compiled in 317ms
+[00:24:48.657] Server  LOG     ✓ Compiled in 136ms
+[00:25:22.883] Server  LOG     ✓ Compiled in 155ms
+[00:26:30.699] Server  LOG     ✓ Compiled in 281ms
+[00:27:44.355] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:44.355] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:27:44.355] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games/space-defender","route":"/games/space-defender"}
+[00:27:44.355] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771857531739} /_vercel/insights/view
+[00:30:05.026] Server  LOG     ✓ Compiled in 1170ms
+[00:30:05.466] Browser ERROR   ./app/games/space-defender/page.tsx:46:3
+Parsing ecmascript source code failed
+  44 | // Enemy types with different behaviors
+  45 | const ENEMY_TYPES = [
+> 46 |   const gameStateRef = useRef<GameState>({
+     |   ^^^^^
+  47 |     playerX: CANVAS_WIDTH / 2 - PLAYER_WIDTH / 2,
+  48 |     targetX: CANVAS_WIDTH / 2 - PLAYER_WIDTH / 2,
+  49 |     bullets: [],
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:30:14.555] Server  LOG     ✓ Compiled in 377ms
+[00:30:15.476] Browser ERROR   ./app/games/space-defender/page.tsx:120:10
+Parsing ecmascript source code failed
+  118 |       width: enemyConfig.size,
+  119 |       height: enemyConfig.size,
+> 120 |     state.targetX = CANVAS_WIDTH / 2 - PLAYER_WIDTH / 2
+      |          ^
+  121 |     state.bullets = []
+  122 |     state.enemies = []
+  123 |     state.particles = []
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:30:30.846] Server  LOG     ✓ Compiled in 187ms
+[00:30:31.453] Browser ERROR   ./app/games/space-defender/page.tsx:321:10
+Parsing ecmascript source code failed
+  319 |           }
+  320 |           return true
+> 321 |         })
+      |          ^
+  322 |
+  323 |         // Powerup collection
+  324 |         state.enemies = state.enemies.filter(enemy => {
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:30:35.444] Browser ERROR   ./app/games/space-defender/page.tsx:335:17
+Parsing ecmascript source code failed
+  333 |         ctx.arc(cx - enemy.width * 0.15, cy - enemy.width * 0.05, enemy.width * 0.06, 0, Math.PI * 2)
+  334 |                 setTimeout(() => { gameStateRef.current.doubleShot = false }, 8000)
+> 335 |               } else {
+      |                 ^^^^
+  336 |                 state.shield = true
+  337 |                 setTimeout(() => { gameStateRef.current.shield = false }, 10000)
+  338 |               }
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:30:36.445] Browser ERROR   ./app/games/space-defender/page.tsx:335:17
+Parsing ecmascript source code failed
+  333 |         ctx.arc(cx - enemy.width * 0.15, cy - enemy.width * 0.05, enemy.width * 0.06, 0, Math.PI * 2)
+  334 |         ctx.arc(cx + enemy.width * 0.15, cy - enemy.width * 0.05, enemy.width * 0.06, 0, Math.PI * 2)
+> 335 |               } else {
+      |                 ^^^^
+  336 |                 state.shield = true
+  337 |                 setTimeout(() => { gameStateRef.current.shield = false }, 10000)
+  338 |               }
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:30:47.442] Browser ERROR   ./app/games/space-defender/page.tsx:528:4
+Parsing ecmascript source code failed
+  526 |       }
+  527 |     }
+> 528 |   }, [createExplosion, spawnEnemy])
+      |    ^
+  529 |
+  530 |   // Handle keyboard
+  531 |   useEffect(() => {
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:30:57.537] Server  LOG     ✓ Compiled in 131ms
+[00:30:58.446] Browser ERROR   ./app/games/space-defender/page.tsx:521:5
+Parsing ecmascript source code failed
+  519 |     }
+  520 |
+> 521 |     requestRef.current = requestAnimationFrame(gameLoop)
+      |     ^^^^^^^^^^
+  522 |
+  523 |     return () => {
+  524 |       if (requestRef.current) {
+
+Expected ',', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:31:08.383] Server  LOG     ✓ Compiled in 154ms
+[00:31:09.440] Browser ERROR   ./app/games/space-defender/page.tsx:528:4
+Parsing ecmascript source code failed
+  526 |       }
+  527 |     }
+> 528 |   }, [createExplosion, spawnEnemy])
+      |    ^
+  529 |
+  530 |   // Handle keyboard
+  531 |   useEffect(() => {
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:31:41.417] Server  LOG     ✓ Compiled in 1332ms
+[00:32:07.937] Server  LOG     ✓ Compiled in 276ms
+[00:44:11.053] Server  LOG     ✓ Compiled in 669ms
+[00:44:46.565] Server  LOG     ✓ Compiled in 1099ms
+[00:49:12.355] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771858819896} /_vercel/insights/view
+[00:49:18.677] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771858826167} /_vercel/insights/view
+[00:51:46.490] Server  LOG     ✓ Compiled in 826ms
+[00:51:47.441] Browser ERROR   ./app/games/space-defender/page.tsx:713:6
+Parsing ecmascript source code failed
+  711 |       }
+  712 |     }
+> 713 |   }, [createExplosion, spawnEnemy])
+      |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  714 |
+  715 |   // Handle keyboard
+  716 |   useEffect(() => {
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:51:47.441] Browser ERROR   ./app/games/space-defender/page.tsx:713:35
+Parsing ecmascript source code failed
+  711 |       }
+  712 |     }
+> 713 |   }, [createExplosion, spawnEnemy])
+      |                                   ^
+  714 |
+  715 |   // Handle keyboard
+  716 |   useEffect(() => {
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:51:54.440] Browser ERROR   ./app/games/space-defender/page.tsx:713:6
+Parsing ecmascript source code failed
+  711 |       }
+  712 |     }
+> 713 |   }, [createExplosion, spawnEnemy])
+      |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  714 |
+  715 |   // Handle keyboard
+  716 |   useEffect(() => {
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:51:54.440] Browser ERROR   ./app/games/space-defender/page.tsx:713:35
+Parsing ecmascript source code failed
+  711 |       }
+  712 |     }
+> 713 |   }, [createExplosion, spawnEnemy])
+      |                                   ^
+  714 |
+  715 |   // Handle keyboard
+  716 |   useEffect(() => {
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:52:20.634] Server  LOG     ✓ Compiled in 573ms
+[00:52:20.846] Browser ERROR   ./app/games/space-defender/page.tsx:865:1
+Parsing ecmascript source code failed
+  863 |     </div>
+  864 |   )
+> 865 | }
+      | ^
+  866 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import traces:
+  Client Component Browser:
+    ./app/games/space-defender/page.tsx [Client Component Browser]
+    ./app/games/space-defender/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/games/space-defender/page.tsx [Client Component SSR]
+    ./app/games/space-defender/page.tsx [Server Component]
+[00:52:26.878] Server  LOG     ✓ Compiled in 1712ms
+[00:53:28.562] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859076046} /_vercel/insights/view
+[00:53:29.914] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859077454} /_vercel/insights/view
+[00:55:36.027] Server  LOG     ✓ Compiled in 767ms
+[00:58:05.711] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859353229} /_vercel/insights/view
+[00:58:09.046] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859356561} /_vercel/insights/view
+[00:58:12.954] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:12.954] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:58:12.954] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[00:58:12.954] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859360385} /_vercel/insights/view
+[00:58:14.355] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859361850} /_vercel/insights/view
+[00:58:19.323] Server  LOG     ✓ Compiled in 535ms
+[00:58:37.889] Server  LOG     ✓ Compiled in 158ms
+[00:58:54.300] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859401842} /_vercel/insights/view
+[00:58:57.000] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771859404539} /_vercel/insights/view
+[00:59:54.699] Server  LOG     ✓ Compiled in 839ms
+[01:05:59.666] Server  LOG     ✓ Compiled in 499ms
+[01:06:22.282] Server  WARN    Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+[01:06:46.645] Server  LOG     ✓ Compiled in 227ms
+[01:07:37.480] Server  LOG     ✓ Compiled in 226ms
+[01:11:33.880] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771860161369} /_vercel/insights/view
+[01:11:36.476] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771860164009} /_vercel/insights/view
+[01:11:40.287] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771860167818} /_vercel/insights/view
+[01:12:55.435] Server  LOG     ✓ Compiled in 290ms
+[01:14:33.749] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:14:33.749] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:14:33.749] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[01:14:33.749] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771860341086} /_vercel/insights/view
+[01:14:44.334] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771860351862} /_vercel/insights/view
+[01:20:35.287] Server  LOG     ✓ Compiled in 233ms
+[01:22:14.243] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:22:14.243] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:22:14.243] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games/space-defender","route":"/games/space-defender"}
+[01:22:14.243] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771860801666} /_vercel/insights/view
+[01:26:16.975] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861044512} /_vercel/insights/view
+[01:26:59.206] Server  LOG     ✓ Compiled in 206ms
+[01:27:13.967] Server  LOG     ✓ Compiled in 376ms
+[01:27:34.778] Server  LOG     ✓ Compiled in 158ms
+[01:27:52.890] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861140397} /_vercel/insights/view
+[01:28:25.740] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:28:25.740] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:28:25.740] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[01:28:25.740] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861172699} /_vercel/insights/view
+[01:28:26.438] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861173954} /_vercel/insights/view
+[01:28:31.508] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861179047} /_vercel/insights/view
+[01:28:33.755] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861181267} /_vercel/insights/view
+[01:29:24.068] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861231608} /_vercel/insights/view
+[01:30:30.993] Server  LOG     ✓ Compiled in 603ms
+[01:30:38.157] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861305674} /_vercel/insights/view
+[01:31:38.669] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:38.669] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:31:38.669] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/gaming","route":"/gaming"}
+[01:31:38.669] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/gaming color: rgb(120, 120, 120) color: inherit {"dp":"/gaming","o":"http://localhost:3000/gaming","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861365844} /_vercel/insights/view
+[01:31:40.176] Server  LOG     ✓ Compiled in 406ms
+[01:31:40.403] Browser ERROR   ./components/navigation.tsx:94:24
+Parsing ecmascript source code failed
+  92 |           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+  93 |
+> 94 |       {/* Mobile nav */}
+     |                        ^
+  95 |       {mobileOpen && (
+  96 |         <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-neon/10">
+  97 |           <ul className="flex flex-col px-6 py-4 gap-4">
+
+Expected '</', got '}'
+
+Import trace:
+  Server Component:
+    ./components/navigation.tsx
+    ./app/page.tsx
+[01:31:44.447] Server  LOG     ✓ Compiled in 415ms
+[01:31:45.444] Browser ERROR   ./components/navigation.tsx:130:9
+Parsing ecmascript source code failed
+  128 |                 setMobileOpen(false)
+  129 |               }}
+> 130 |         </div>
+      |         ^
+  131 |       )}
+  132 |     </header>
+  133 |   )
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/navigation.tsx
+    ./app/page.tsx
+[01:31:45.444] Browser ERROR   ./components/navigation.tsx:130:10
+Parsing ecmascript source code failed
+  128 |                 setMobileOpen(false)
+  129 |               }}
+> 130 |         </div>
+      |          ^^^^^
+  131 |       )}
+  132 |     </header>
+  133 |   )
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/navigation.tsx
+    ./app/page.tsx
+[01:31:46.028] Server  LOG     ✓ Compiled in 256ms
+[01:31:49.389] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:49.389] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:31:49.389] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/gaming","route":"/gaming"}
+[01:31:49.389] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/gaming color: rgb(120, 120, 120) color: inherit {"dp":"/gaming","o":"http://localhost:3000/gaming","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861376600} /_vercel/insights/view
+[01:31:52.727] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:54.724] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                    <SegmentViewNode type="page" pagePath="page.tsx">
+                      <SegmentTrieNode>
+                      <Home>
+                        <MatrixRain>
+                        <Home>
+                          <Navigation>
+                            <header className="fixed top-...">
+                              <nav className="mx-auto ma...">
+                                <a>
+                                <ul>
+                                <button>
+                                <button
+                                  onClick={function onClick}
+                                  className="hidden md:flex items-center justify-center w-9 h-9 rounded-md border bord..."
++                                 aria-label="Cambiar a modo claro"
+-                                 aria-label="Cambiar a modo oscuro"
+                                >
+                        ...
+                    ...
+                  ...
+      ...
+
+[01:31:54.907] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:31:54.907] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:31:54.907] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861382374} /_vercel/insights/view
+[01:31:58.048] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:58.049] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:31:58.049] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[01:31:58.049] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861385519} /_vercel/insights/view
+[01:32:05.039] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861392534} /_vercel/insights/view
+[01:32:31.791] Server  LOG     ✓ Compiled in 347ms
+[01:32:34.101] Browser ERROR   uncaughtError: Error: ./app/games/page.tsx:86:26
+Parsing ecmascript source code failed
+  84 |         {/* Games Grid */}
+  85 |                     Dificultad media
+> 86 |                   </span>
+     |                          ^
+> 87 |                 </div>
+     | ^^^^^^^^^^^^^^^^^
+  88 |               </div>
+  89 |             </div>
+  90 |           </Link>
+
+Expected '</', got 'jsx text'
+
+
+[01:32:34.437] Browser ERROR   ./app/games/page.tsx:86:26
+Parsing ecmascript source code failed
+  84 |         {/* Games Grid */}
+  85 |                     Dificultad media
+> 86 |                   </span>
+     |                          ^
+> 87 |                 </div>
+     | ^^^^^^^^^^^^^^^^^
+  88 |               </div>
+  89 |             </div>
+  90 |           </Link>
+
+Expected '</', got 'jsx text'
+[01:32:34.437] Browser ERROR   ./app/games/page.tsx:86:26
+Parsing ecmascript source code failed
+  84 |         {/* Games Grid */}
+  85 |                     Dificultad media
+> 86 |                   </span>
+     |                          ^
+> 87 |                 </div>
+     | ^^^^^^^^^^^^^^^^^
+  88 |               </div>
+  89 |             </div>
+  90 |           </Link>
+
+Expected '</', got 'jsx text'
+[01:33:00.258] Server  LOG     ✓ Compiled in 377ms
+[01:33:02.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:33:02.884] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                    <SegmentViewNode type="page" pagePath="page.tsx">
+                      <SegmentTrieNode>
+                      <Home>
+                        <MatrixRain>
+                        <Home>
+                          <Navigation>
+                            <header className="fixed top-...">
+                              <nav className="mx-auto ma...">
+                                <a>
+                                <ul>
+                                <button>
+                                <button
+                                  onClick={function onClick}
+                                  className="hidden md:flex items-center justify-center w-9 h-9 rounded-md border bord..."
++                                 aria-label="Cambiar a modo claro"
+-                                 aria-label="Cambiar a modo oscuro"
+                                >
+                        ...
+                    ...
+                  ...
+      ...
+
+[01:33:03.175] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:33:03.175] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:33:03.175] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861450713} /_vercel/insights/view
+[01:33:05.002] Server  ERROR   ⨯ TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:33:06.321] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:33:06.321] Browser ERROR   uncaughtError: TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:34:04.995] Server  LOG     ✓ Compiled in 127ms
+[01:34:05.316] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:34:05.722] Server  ERROR   ⨯ TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:34:07.338] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:07.338] Browser ERROR   uncaughtError: TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:34:16.539] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:17.532] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                    <SegmentViewNode type="page" pagePath="page.tsx">
+                      <SegmentTrieNode>
+                      <Home>
+                        <MatrixRain>
+                        <Home>
+                          <Navigation>
+                            <header className="fixed top-...">
+                              <nav className="mx-auto ma...">
+                                <a>
+                                <ul>
+                                <button>
+                                <button
+                                  onClick={function onClick}
+                                  className="hidden md:flex items-center justify-center w-9 h-9 rounded-md border bord..."
++                                 aria-label="Cambiar a modo claro"
+-                                 aria-label="Cambiar a modo oscuro"
+                                >
+                        ...
+                    ...
+                  ...
+      ...
+
+[01:34:17.681] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:34:17.681] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:34:17.681] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861525166} /_vercel/insights/view
+[01:34:48.651] Server  ERROR   ⨯ TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:34:50.268] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:50.268] Browser ERROR   uncaughtError: TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:35:01.957] Server  LOG     ✓ Compiled in 258ms
+[01:35:02.389] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:35:02.831] Server  ERROR   ⨯ TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:35:04.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:35:04.267] Browser ERROR   uncaughtError: TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:35:48.274] Server  ERROR   ⨯ TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:35:49.597] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:35:49.597] Browser ERROR   uncaughtError: TypeError: useState only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/react-client-hook-in-server-component
+[01:36:02.454] Browser ERROR   ./app/games/page.tsx:4:27
+Ecmascript file had an error
+  2 | import Link from 'next/link'
+  3 | import { Gamepad2, Zap, ArrowLeft, Monitor } from 'lucide-react'
+> 4 | import React, { useState, useEffect } from 'react'
+    |                           ^^^^^^^^^
+  5 |
+  6 | export const metadata: Metadata = {
+  7 |   title: 'Juegos | Juan David Guarin',
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[01:36:02.454] Browser ERROR   ./app/games/page.tsx:4:17
+Ecmascript file had an error
+  2 | import Link from 'next/link'
+  3 | import { Gamepad2, Zap, ArrowLeft, Monitor } from 'lucide-react'
+> 4 | import React, { useState, useEffect } from 'react'
+    |                 ^^^^^^^^
+  5 |
+  6 | export const metadata: Metadata = {
+  7 |   title: 'Juegos | Juan David Guarin',
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[01:36:02.454] Browser ERROR   ./app/games/page.tsx:223:8
+Ecmascript file had an error
+  221 | }
+  222 |
+> 223 | import React from 'react'
+      |        ^^^^^
+  224 |
+
+the name `React` is defined multiple times
+[01:36:52.113] Server  LOG     ✓ Compiled in 515ms
+[01:36:52.967] Server  LOG     ✓ Compiled in 14ms
+[01:36:53.122] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:36:56.310] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:36:56.310] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SegmentViewNode type="page" pagePath="games/page...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function GamesPage} serverProvidedParams={{...}}>
+        <GamesPage params={Promise} searchParams={Promise}>
+          <div className="min-h-scre...">
+            <header>
+            <main className="mx-auto ma...">
+              <div>
+              <div className="grid md:gr...">
+                <LinkComponent>
+                <LinkComponent href="/games/spa..." className="group">
+                  <a className="group" ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                    <div className="relative b...">
+                      <div className="relative h...">
+                        <div className="absolute i...">
+                          <div className="absolute i...">
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "9.690629614179525%"
+-                               left: "16.2771%"
++                               top: "67.22431323468696%"
+-                               top: "11.4954%"
++                               animationDelay: "1.1878840948798743s"
+-                               animation-delay: "0.631026s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "80.19919239984307%"
+-                               left: "29.2772%"
++                               top: "42.64540411986189%"
+-                               top: "25.6118%"
++                               animationDelay: "0.6575234553995022s"
+-                               animation-delay: "1.23456s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "59.25767183205435%"
+-                               left: "97.3621%"
++                               top: "33.007194805035%"
+-                               top: "5.0756%"
++                               animationDelay: "1.5704305272355372s"
+-                               animation-delay: "0.989441s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "56.61624463037715%"
+-                               left: "0.0360661%"
++                               top: "5.961271877727404%"
+-                               top: "83.5074%"
++                               animationDelay: "1.0368018142300064s"
+-                               animation-delay: "0.317768s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "24.617983824597054%"
+-                               left: "13.9189%"
++                               top: "19.619888442997112%"
+-                               top: "55.5164%"
++                               animationDelay: "1.4629978462506827s"
+-                               animation-delay: "0.602188s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "37.40591787370069%"
+-                               left: "90.7087%"
++                               top: "14.08684847014101%"
+-                               top: "49.8846%"
++                               animationDelay: "1.6442504094119166s"
+-                               animation-delay: "1.48878s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "67.17121589529803%"
+-                               left: "7.9281%"
++                               top: "59.83637870227667%"
+-                               top: "71.4705%"
++                               animationDelay: "1.796503298664086s"
+-                               animation-delay: "1.10672s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "62.7925472402432%"
+-                               left: "48.9524%"
++                               top: "49.98774199417275%"
+-                               top: "12.9843%"
++                               animationDelay: "0.8197873739759007s"
+-                               animation-delay: "0.598585s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "49.39020380437403%"
+-                               left: "89.5875%"
++                               top: "83.51135555271082%"
+-                               top: "21.5106%"
++                               animationDelay: "1.0937984583599607s"
+-                               animation-delay: "1.30434s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "34.660189108956196%"
+-                               left: "71.5426%"
++                               top: "89.21155889553923%"
+-                               top: "24.4651%"
++                               animationDelay: "0.45407475673745124s"
+-                               animation-delay: "1.41811s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "55.31977081508601%"
+-                               left: "65.2451%"
++                               top: "35.90137920495573%"
+-                               top: "15.7426%"
++                               animationDelay: "1.0107101398356995s"
+-                               animation-delay: "0.0886987s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "36.848280293528944%"
+-                               left: "65.9221%"
++                               top: "64.3762682085265%"
+-                               top: "89.1424%"
++                               animationDelay: "0.968623416109943s"
+-                               animation-delay: "1.62876s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "13.562062962947397%"
+-                               left: "38.7063%"
++                               top: "13.077733654282998%"
+-                               top: "50.8125%"
++                               animationDelay: "0.9154796214578633s"
+-                               animation-delay: "1.32663s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "67.02719218511182%"
+-                               left: "50.6091%"
++                               top: "44.4633269527686%"
+-                               top: "27.9115%"
++                               animationDelay: "1.2352044360249814s"
+-                               animation-delay: "1.15141s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "63.67240597484163%"
+-                               left: "73.2815%"
++                               top: "26.76506342309114%"
+-                               top: "1.07118%"
++                               animationDelay: "1.763788169949854s"
+-                               animation-delay: "1.9148s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "31.780209574830142%"
+-                               left: "76.8432%"
++                               top: "13.587626124852237%"
+-                               top: "66.7064%"
++                               animationDelay: "0.3448474065765754s"
+-                               animation-delay: "0.925053s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "23.84025771965255%"
+-                               left: "9.11613%"
++                               top: "97.89789366876114%"
+-                               top: "57.9983%"
++                               animationDelay: "1.0455923604310642s"
+-                               animation-delay: "0.580054s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "91.31737505928434%"
+-                               left: "29.9022%"
++                               top: "43.25493487203271%"
+-                               top: "34.4775%"
++                               animationDelay: "1.3259493371247832s"
+-                               animation-delay: "1.56566s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "29.293430596633808%"
+-                               left: "27.2461%"
++                               top: "61.56973858978836%"
+-                               top: "76.1151%"
++                               animationDelay: "0.0278840215719518s"
+-                               animation-delay: "0.101674s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "82.01450761398658%"
+-                               left: "1.93062%"
++                               top: "96.70201423204465%"
+-                               top: "72.0715%"
++                               animationDelay: "0.8260639422852729s"
+-                               animation-delay: "0.802869s"
+                              }}
+                            >
+                          ...
+                        ...
+                      ...
+              ...
+    ...
+
+[01:36:56.311] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:36:56.311] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[01:36:56.311] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861683501} /_vercel/insights/view
+[01:37:11.251] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/space-defender color: rgb(120, 120, 120) color: inherit {"dp":"/games/space-defender","o":"http://localhost:3000/games/space-defender","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861698782} /_vercel/insights/view
+[01:37:26.338] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861713878} /_vercel/insights/view
+[01:37:29.185] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games/pong color: rgb(120, 120, 120) color: inherit {"dp":"/games/pong","o":"http://localhost:3000/games/pong","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861716692} /_vercel/insights/view
+[01:38:00.427] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861747965} /_vercel/insights/view
+[01:38:12.628] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861760130} /_vercel/insights/view
+[01:39:01.143] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SegmentViewNode type="page" pagePath="games/page...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function GamesPage} serverProvidedParams={{...}}>
+        <GamesPage params={Promise} searchParams={Promise}>
+          <div className="min-h-scre...">
+            <header>
+            <main className="mx-auto ma...">
+              <div>
+              <div className="grid md:gr...">
+                <LinkComponent>
+                <LinkComponent href="/games/spa..." className="group">
+                  <a className="group" ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                    <div className="relative b...">
+                      <div className="relative h...">
+                        <div className="absolute i...">
+                          <div className="absolute i...">
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "73.793350528097%"
+-                               left: "99.79%"
++                               top: "45.960638247007445%"
+-                               top: "34.08%"
++                               animationDelay: "1.0619707452750753s"
+-                               animation-delay: "1.56613s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "45.83844379274281%"
+-                               left: "28.897%"
++                               top: "63.46297604086466%"
+-                               top: "48.1561%"
++                               animationDelay: "1.7709210687879573s"
+-                               animation-delay: "1.43385s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "97.56276354095715%"
+-                               left: "94.6414%"
++                               top: "28.045832341582265%"
+-                               top: "88.5563%"
++                               animationDelay: "1.6624726139330244s"
+-                               animation-delay: "1.75806s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "20.892249675658636%"
+-                               left: "70.9393%"
++                               top: "61.55172898821666%"
+-                               top: "52.4705%"
++                               animationDelay: "0.5589222604890118s"
+-                               animation-delay: "0.603345s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "58.410130606567265%"
+-                               left: "56.8742%"
++                               top: "64.03469322117533%"
+-                               top: "53.8716%"
++                               animationDelay: "1.0223657074576922s"
+-                               animation-delay: "1.71801s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "56.629530257521154%"
+-                               left: "41.4566%"
++                               top: "35.22099051344508%"
+-                               top: "21.5576%"
++                               animationDelay: "1.6508665134826033s"
+-                               animation-delay: "0.550176s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "58.0156905984483%"
+-                               left: "93.2142%"
++                               top: "86.20191605148011%"
+-                               top: "16.8195%"
++                               animationDelay: "1.8354302898191326s"
+-                               animation-delay: "1.33697s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "43.28028734119793%"
+-                               left: "49.8364%"
++                               top: "62.654481893572864%"
+-                               top: "31.4393%"
++                               animationDelay: "1.0785218112426718s"
+-                               animation-delay: "0.470869s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "46.29968773280695%"
+-                               left: "6.51018%"
++                               top: "46.920018799742444%"
+-                               top: "60.1606%"
++                               animationDelay: "1.4170618613288692s"
+-                               animation-delay: "0.254725s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "27.240895132139975%"
+-                               left: "86.546%"
++                               top: "80.07911722662669%"
+-                               top: "75.4618%"
++                               animationDelay: "0.5474957816241834s"
+-                               animation-delay: "1.51954s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "79.0144703677326%"
+-                               left: "91.0729%"
++                               top: "26.51793657815026%"
+-                               top: "0.345459%"
++                               animationDelay: "0.0836995757243677s"
+-                               animation-delay: "0.26411s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "19.417532492029956%"
+-                               left: "84.5839%"
++                               top: "7.264768882701988%"
+-                               top: "32.6957%"
++                               animationDelay: "1.8162660818480876s"
+-                               animation-delay: "1.44434s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "6.85812473745897%"
+-                               left: "87.3429%"
++                               top: "97.18230139520954%"
+-                               top: "76.3095%"
++                               animationDelay: "0.5105226876554949s"
+-                               animation-delay: "0.338666s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "95.90850271330979%"
+-                               left: "83.6903%"
++                               top: "13.604923260654278%"
+-                               top: "91.4958%"
++                               animationDelay: "0.19881251071007489s"
+-                               animation-delay: "1.82563s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "68.5031813879878%"
+-                               left: "90.0954%"
++                               top: "29.33902493392395%"
+-                               top: "35.9959%"
++                               animationDelay: "1.3654740071300382s"
+-                               animation-delay: "1.29714s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "14.38544697147991%"
+-                               left: "2.99207%"
++                               top: "32.48264645881109%"
+-                               top: "40.2222%"
++                               animationDelay: "1.4990115906286063s"
+-                               animation-delay: "1.91584s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "48.275362741288156%"
+-                               left: "13.1469%"
++                               top: "50.04583916011791%"
+-                               top: "17.7071%"
++                               animationDelay: "1.6329551221429541s"
+-                               animation-delay: "0.28337s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "29.80397914683499%"
+-                               left: "84.8797%"
++                               top: "97.18528396852756%"
+-                               top: "31.9851%"
++                               animationDelay: "0.025985411061569597s"
+-                               animation-delay: "0.23383s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "94.03411234708526%"
+-                               left: "73.6943%"
++                               top: "9.45323643763042%"
+-                               top: "13.3458%"
++                               animationDelay: "0.16679284174746134s"
+-                               animation-delay: "0.437032s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "8.00394899700716%"
+-                               left: "44.7255%"
++                               top: "70.01921482804951%"
+-                               top: "7.66027%"
++                               animationDelay: "1.2815327692992529s"
+-                               animation-delay: "1.85493s"
+                              }}
+                            >
+                          ...
+                        ...
+                      ...
+              ...
+    ...
+
+[01:39:01.143] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:39:01.143] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[01:39:01.143] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861808603} /_vercel/insights/view
+[01:39:11.674] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861819060} /_vercel/insights/view
+[01:39:16.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:39:16.919] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SegmentViewNode type="page" pagePath="games/page...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function GamesPage} serverProvidedParams={{...}}>
+        <GamesPage params={Promise} searchParams={Promise}>
+          <div className="min-h-scre...">
+            <header>
+            <main className="mx-auto ma...">
+              <div>
+              <div className="grid md:gr...">
+                <LinkComponent>
+                <LinkComponent href="/games/spa..." className="group">
+                  <a className="group" ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                    <div className="relative b...">
+                      <div className="relative h...">
+                        <div className="absolute i...">
+                          <div className="absolute i...">
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "4.908177737327124%"
+-                               left: "30.399%"
++                               top: "13.109492520280075%"
+-                               top: "15.5543%"
++                               animationDelay: "1.3711616634509767s"
+-                               animation-delay: "0.60077s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "11.566112206183554%"
+-                               left: "11.729%"
++                               top: "95.41059167263643%"
+-                               top: "86.7306%"
++                               animationDelay: "1.7396290227456326s"
+-                               animation-delay: "1.65258s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "37.22124755339944%"
+-                               left: "35.0106%"
++                               top: "73.55016785799013%"
+-                               top: "20.2592%"
++                               animationDelay: "1.361613081100662s"
+-                               animation-delay: "0.93707s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "19.678512035337903%"
+-                               left: "24.1269%"
++                               top: "62.692750634436536%"
+-                               top: "79.8658%"
++                               animationDelay: "1.2337300928386359s"
+-                               animation-delay: "0.0443032s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "51.55022785417756%"
+-                               left: "6.13092%"
++                               top: "15.859410423533104%"
+-                               top: "12.0878%"
++                               animationDelay: "1.6858395521115948s"
+-                               animation-delay: "1.78481s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "26.097658852656526%"
+-                               left: "15.6298%"
++                               top: "79.24519924128556%"
+-                               top: "50.1143%"
++                               animationDelay: "0.586440506398817s"
+-                               animation-delay: "0.921568s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "26.611217690732857%"
+-                               left: "83.1925%"
++                               top: "87.16205443142564%"
+-                               top: "76.2677%"
++                               animationDelay: "1.3568234883941004s"
+-                               animation-delay: "0.989169s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "46.97874606250081%"
+-                               left: "21.5145%"
++                               top: "29.69900953758615%"
+-                               top: "66.3514%"
++                               animationDelay: "1.1217474302464423s"
+-                               animation-delay: "1.40735s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "81.84609795158171%"
+-                               left: "8.98893%"
++                               top: "87.69394752713606%"
+-                               top: "50.2784%"
++                               animationDelay: "1.0190864927390444s"
+-                               animation-delay: "1.36895s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "8.405286705307324%"
+-                               left: "77.055%"
++                               top: "16.62735303436054%"
+-                               top: "40.0859%"
++                               animationDelay: "1.5676982974470937s"
+-                               animation-delay: "0.954198s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "97.36716922655279%"
+-                               left: "38.1124%"
++                               top: "7.062675130772112%"
+-                               top: "76.2711%"
++                               animationDelay: "1.6532059282536669s"
+-                               animation-delay: "1.07435s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "16.68854273403323%"
+-                               left: "6.89769%"
++                               top: "40.00113991304401%"
+-                               top: "1.5794%"
++                               animationDelay: "0.4399917194483216s"
+-                               animation-delay: "1.25351s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "20.810264995749705%"
+-                               left: "16.475%"
++                               top: "94.79094844907401%"
+-                               top: "18.5779%"
++                               animationDelay: "1.7938830784190551s"
+-                               animation-delay: "1.81837s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "98.91624705452737%"
+-                               left: "62.5069%"
++                               top: "52.62684425585299%"
+-                               top: "54.1716%"
++                               animationDelay: "1.0428063980766407s"
+-                               animation-delay: "1.54767s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "93.83300614640616%"
+-                               left: "5.77324%"
++                               top: "37.29300697971713%"
+-                               top: "16.2895%"
++                               animationDelay: "1.1678526679405912s"
+-                               animation-delay: "1.53507s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "62.64331851382248%"
+-                               left: "15.1997%"
++                               top: "57.76482182573326%"
+-                               top: "57.0475%"
++                               animationDelay: "0.5971681392595598s"
+-                               animation-delay: "0.919792s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "6.485058743697714%"
+-                               left: "5.97756%"
++                               top: "25.436014173585942%"
+-                               top: "27.2942%"
++                               animationDelay: "1.7076794711751513s"
+-                               animation-delay: "1.38312s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "26.599414394464816%"
+-                               left: "86.8033%"
++                               top: "65.75587106879931%"
+-                               top: "60.6682%"
++                               animationDelay: "0.04671816360162784s"
+-                               animation-delay: "0.550476s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "43.33664265218478%"
+-                               left: "50.0281%"
++                               top: "4.975195053336967%"
+-                               top: "6.43478%"
++                               animationDelay: "1.8484634595831786s"
+-                               animation-delay: "1.07401s"
+                              }}
+                            >
+                            <div
+                              className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                              style={{
++                               left: "75.6845817844489%"
+-                               left: "13.5672%"
++                               top: "24.973345814254877%"
+-                               top: "10.0048%"
++                               animationDelay: "1.067955961121094s"
+-                               animation-delay: "0.302514s"
+                              }}
+                            >
+                          ...
+                        ...
+                      ...
+              ...
+    ...
+
+[01:39:16.919] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:39:16.919] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/games","route":"/games"}
+[01:39:16.919] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/games color: rgb(120, 120, 120) color: inherit {"dp":"/games","o":"http://localhost:3000/games","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861824374} /_vercel/insights/view
+[01:40:08.561] Server  LOG     ✓ Compiled in 189ms
+[01:40:22.888] Server  LOG     ✓ Compiled in 234ms
+[01:40:28.945] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1771861896455} /_vercel/insights/view

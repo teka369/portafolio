@@ -47,6 +47,33 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
+// Validate ../../../app/games/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/games">> = Specific
+  const handler = {} as typeof import("../../../app/games/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/games/pong/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/games/pong">> = Specific
+  const handler = {} as typeof import("../../../app/games/pong/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/games/space-defender/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/games/space-defender">> = Specific
+  const handler = {} as typeof import("../../../app/games/space-defender/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific

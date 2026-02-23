@@ -2,5 +2,8 @@
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/api/contact/route": "app/api/contact/route.js",
+  "/games/page": "app/games/page.js",
+  "/games/pong/page": "app/games/pong/page.js",
+  "/games/space-defender/page": "app/games/space-defender/page.js",
   "/page": "app/page.js"
 }

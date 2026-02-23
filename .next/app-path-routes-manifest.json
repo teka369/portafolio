@@ -2,5 +2,8 @@
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
   "/api/contact/route": "/api/contact",
+  "/games/page": "/games",
+  "/games/pong/page": "/games/pong",
+  "/games/space-defender/page": "/games/space-defender",
   "/page": "/"
 }
