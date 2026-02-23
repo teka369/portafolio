@@ -146,10 +146,30 @@ export function ContactSection() {
     }
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({ nombre: '', email: '', mensaje: '' })
+        setCodeValue(DEFAULT_CODE)
+        setTimeout(() => setSubmitted(false), 3000)
+      } else {
+        alert('Error al enviar el mensaje. Por favor intenta de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Error al enviar el mensaje. Por favor intenta de nuevo.')
+    }
   }
 
   const handleReset = () => {
