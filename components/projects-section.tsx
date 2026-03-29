@@ -38,8 +38,8 @@ const projects = [
     description:
       "Refuerzo Educativo Complementario - Plataforma web para ayudar a estudiantes de multiples colegios a mejorar academicamente en sus estudios.",
     techs: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma"],
-    image: "/R.E.C.png",
-    live: "#",
+    image: "/R.E.C-image.jpg",
+    live: "https://recedu.co",
     comingSoon: true,
   },
 ]
