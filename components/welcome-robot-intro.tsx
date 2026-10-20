@@ -156,10 +156,10 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
     } else {
       // A distinct exit: acknowledge the visitor, turn smoothly, and travel through the portal.
       const turn = smooth01(local / 0.8)
-      targetZ = THREE.MathUtils.lerp(0, -0.2, exit)
+      targetZ = THREE.MathUtils.lerp(0, -1.8, exit)
       targetY = THREE.MathUtils.lerp(0, -0.18, exit)
       targetX = THREE.MathUtils.lerp(0, 0.12, exit)
-      targetScale = THREE.MathUtils.lerp(1.25, 0.18, exit)
+      targetScale = THREE.MathUtils.lerp(1.25, 0.08, exit)
       robot.rotation.y = THREE.MathUtils.damp(robot.rotation.y, THREE.MathUtils.lerp(0, -0.68, turn), 4.5, delta)
       rightArmZ = THREE.MathUtils.lerp(0.04, -1.75, smooth01(local / 0.42))
       rightWristZ = local < 0.55 ? Math.sin(local * 13) * 0.18 : 0
@@ -212,7 +212,7 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
   })
 
   return (
-    <group ref={root}>
+    <group ref={root} position={[0, -0.45, 2.5]} rotation={[0, -0.55, 0]} scale={0.12}>
       {/* Body */}
       <mesh position={[0, 0.12, 0]} castShadow>
         <boxGeometry args={[1.12, 1.25, 0.72]} />
@@ -464,7 +464,7 @@ export function WelcomeRobotIntro({ onComplete }: { onComplete: () => void }) {
         <Portal intensity={portalIntensity} />
         <Robot phase={phase} dialogueStep={dialogueStep} />
         <Sparkles count={isMobile ? 35 : 80} scale={[7, 5, 3]} size={1.6} speed={0.25} color="#69ffad" opacity={0.5} />
-        <ContactShadows position={[0, -1.68, 0]} opacity={0.38} scale={7} blur={2.8} />
+        <ContactShadows position={[0, -1.12, 0]} opacity={0.38} scale={7} blur={2.8} />
       </Canvas>
 
       <div className="pointer-events-none absolute left-1/2 top-[8%] z-10 flex w-full max-w-2xl -translate-x-1/2 flex-col items-center px-5 sm:top-[10%]">
