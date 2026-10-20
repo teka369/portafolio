@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, RotateCcw, Volume2, VolumeX, Trophy, Monitor } from 'lucide-react'
+import { ArrowLeft, RotateCcw, Volume2, VolumeX, Trophy } from 'lucide-react'
 
 interface GameState {
   playerY: number
@@ -304,30 +304,6 @@ export default function PongPage() {
 
   const state = gameStateRef.current
 
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768)
-    }
-    checkMobile()
-  }, [])
-
-  if (isMobile) {
-    return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center p-6">
-        <div className="text-center max-w-md">
-          <Monitor className="w-20 h-20 mx-auto mb-6 text-muted-foreground" />
-          <h1 className="text-2xl font-bold text-foreground mb-4">Solo para Computadora</h1>
-          <p className="text-muted-foreground mb-8">Este juego requiere mouse y teclado.</p>
-          <Link href="/games" className="inline-flex items-center gap-2 px-6 py-3 bg-neon text-black font-mono rounded-md hover:bg-neon/90">
-            <ArrowLeft className="h-4 w-4" /> Volver a juegos
-          </Link>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -351,12 +327,12 @@ export default function PongPage() {
           </h1>
           <p className="text-muted-foreground">
             {!state.isRunning && !state.isGameOver 
-              ? 'Presiona ESPACIO o haz clic para comenzar' 
+              ? 'Presiona ESPACIO o toca la pantalla para comenzar' 
               : state.isPaused 
                 ? 'Juego pausado - Presiona ESPACIO para continuar'
                 : state.isGameOver
                   ? `¡${state.winner === 'player' ? 'Ganaste!' : 'La computadora ganó!'} Presiona ESPACIO para jugar de nuevo`
-                  : 'Usa el mouse para mover tu paleta'
+                  : 'Mueve el ratón o desliza el dedo para controlar la paleta'
             }
           </p>
         </div>
@@ -368,23 +344,23 @@ export default function PongPage() {
             width={CANVAS_WIDTH}
             height={CANVAS_HEIGHT}
             onMouseMove={handleMouseMove}
-            onTouchMove={undefined}
+            onTouchMove={handleTouchMove}
             onClick={() => {
               if (!state.isRunning) startGame()
               else if (state.isGameOver) startGame()
             }}
-            className="w-full max-w-[800px] cursor-none rounded-xl border border-border/50 shadow-[0_0_40px_rgba(0,255,65,0.1)]"
-            style={{ aspectRatio: `${CANVAS_WIDTH}/${CANVAS_HEIGHT}` }}
+            className="w-full max-w-[800px] rounded-xl border border-border/50 shadow-[0_0_40px_rgba(0,255,65,0.1)] md:cursor-none"
+            style={{ aspectRatio: `${CANVAS_WIDTH}/${CANVAS_HEIGHT}`, touchAction: "none" }}
           />
 
           {/* Overlay messages */}
           {!state.isRunning && !state.isGameOver && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-xl">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/50 rounded-xl">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-neon flex items-center justify-center animate-pulse">
                   <span className="text-4xl">🎮</span>
                 </div>
-                <p className="font-mono text-neon">Presiona ESPACIO para comenzar</p>
+                <p className="font-mono text-neon">Presiona ESPACIO o toca la pantalla para comenzar</p>
               </div>
             </div>
           )}

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, RotateCcw, Skull, Maximize2, Minimize2, Monitor } from 'lucide-react'
+import { ArrowLeft, RotateCcw, Skull, Maximize2, Minimize2 } from 'lucide-react'
 
 interface GameObject {
   x: number
@@ -201,7 +201,12 @@ export default function SpaceDefenderPage() {
   }, [])
 
   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLCanvasElement>) => {
-    // Desktop only - touch disabled
+    const canvas = canvasRef.current
+    if (!canvas || e.touches.length === 0) return
+    const rect = canvas.getBoundingClientRect()
+    const scaleX = CANVAS_WIDTH / rect.width
+    const touchX = (e.touches[0].clientX - rect.left) * scaleX
+    gameStateRef.current.targetX = Math.max(0, Math.min(CANVAS_WIDTH - PLAYER_WIDTH, touchX - PLAYER_WIDTH / 2))
   }, [])
 
   const shoot = useCallback((timestamp: number) => {
@@ -827,30 +832,6 @@ export default function SpaceDefenderPage() {
 
   const state = gameStateRef.current
 
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768)
-    }
-    checkMobile()
-  }, [])
-
-  if (isMobile) {
-    return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center p-6">
-        <div className="text-center max-w-md">
-          <Monitor className="w-20 h-20 mx-auto mb-6 text-muted-foreground" />
-          <h1 className="text-2xl font-bold text-foreground mb-4">Solo para Computadora</h1>
-          <p className="text-muted-foreground mb-8">Este juego requiere mouse y teclado.</p>
-          <Link href="/games" className="inline-flex items-center gap-2 px-6 py-3 bg-red-500 text-white font-mono rounded-md hover:bg-red-600">
-            <ArrowLeft className="h-4 w-4" /> Volver a juegos
-          </Link>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border/50">
@@ -868,9 +849,9 @@ export default function SpaceDefenderPage() {
             <span className="text-red-500">Space</span> <span className="text-neon">Defender</span>
           </h1>
           <p className="text-muted-foreground text-sm">
-            {!state.isRunning && !state.isGameOver ? 'Presiona ESPACIO o haz clic para comenzar' : 
+            {!state.isRunning && !state.isGameOver ? 'Presiona ESPACIO o toca la pantalla para comenzar' : 
              state.isPaused ? 'Juego pausado - Presiona ESPACIO para continuar' :
-             state.isGameOver ? `¡Game Over! Score: ${state.score} - Presiona ESPACIO para jugar de nuevo` : '¡Sobrevive!'}
+             state.isGameOver ? `¡Game Over! Score: ${state.score} - Presiona ESPACIO para jugar de nuevo` : 'Desliza el dedo para moverte y disparar'}
           </p>
         </div>
 
@@ -880,14 +861,15 @@ export default function SpaceDefenderPage() {
             width={CANVAS_WIDTH}
             height={CANVAS_HEIGHT}
             onMouseMove={handleMouseMove}
-            onTouchMove={undefined}
+            onTouchMove={(e) => { handleTouchMove(e); shoot(Date.now()) }}
+            onTouchStart={() => { if (!state.isRunning || state.isGameOver) startGame(); shoot(Date.now()) }}
             onClick={() => {
               if (!state.isRunning) startGame()
               else if (state.isGameOver) startGame()
               else shoot(Date.now())
             }}
-            className="w-full max-w-[1200px] cursor-crosshair rounded-xl border-2 border-red-500/30 shadow-[0_0_60px_rgba(239,68,68,0.2)]"
-            style={{ aspectRatio: `${CANVAS_WIDTH}/${CANVAS_HEIGHT}` }}
+            className="w-full max-w-[1200px] rounded-xl border-2 border-red-500/30 shadow-[0_0_60px_rgba(239,68,68,0.2)] md:cursor-crosshair"
+            style={{ aspectRatio: `${CANVAS_WIDTH}/${CANVAS_HEIGHT}`, touchAction: "none" }}
           />
 
           <button
@@ -899,12 +881,12 @@ export default function SpaceDefenderPage() {
           </button>
 
           {!state.isRunning && !state.isGameOver && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/60 rounded-xl">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/60 rounded-xl">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-red-500 flex items-center justify-center animate-pulse">
                   <span className="text-5xl">🚀</span>
                 </div>
-                <p className="font-mono text-xl text-red-500">Presiona ESPACIO para comenzar</p>
+                <p className="font-mono text-xl text-red-500">Presiona ESPACIO o toca la pantalla para comenzar</p>
               </div>
             </div>
           )}
