@@ -74,12 +74,14 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
   const leftEye = useRef<THREE.Mesh>(null)
   const rightEye = useRef<THREE.Mesh>(null)
   const phaseSeen = useRef<IntroPhase>(phase)
+  const dialogueStepSeen = useRef(dialogueStep)
   const phaseStartedAt = useRef(0)
 
   useFrame(({ clock }, delta) => {
     const now = clock.elapsedTime
-    if (phaseSeen.current !== phase) {
+    if (phaseSeen.current !== phase || (phase === "greeting" && dialogueStepSeen.current !== dialogueStep)) {
       phaseSeen.current = phase
+      dialogueStepSeen.current = dialogueStep
       phaseStartedAt.current = now
     }
     const local = Math.max(0, now - phaseStartedAt.current)
