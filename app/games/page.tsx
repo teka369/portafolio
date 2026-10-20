@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight, Gamepad2, Keyboard, Mouse, Rocket, Sparkles, Trophy, Zap } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, Gamepad2, Keyboard, Mouse, Rocket, Sparkles, Trophy, Zap, Skull } from 'lucide-react'
 
 const games = [
   {
@@ -107,9 +107,16 @@ export default function GamesPage() {
                 </div>
                 <p className="mt-4 text-sm leading-6 text-muted-foreground">{description}</p>
                 <div className="mt-5 flex items-center gap-2 text-xs text-muted-foreground"><Sparkles className="h-3.5 w-3.5 text-neon/80" /> {controls}</div>
-                <Link href={href} className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-neon px-5 py-3 font-mono text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_8px_28px_rgba(0,255,65,.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-background">
-                  Jugar ahora <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  <Link href={href} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-neon px-4 py-3 font-mono text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_8px_28px_rgba(0,255,65,.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+                    Jugar ahora <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                  {title === 'Space Defender' && (
+                    <Link href="/games/space-defender?level=20" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-red-500/40 bg-red-500/5 px-4 py-3 font-mono text-xs font-semibold text-red-300 transition-all hover:border-red-400 hover:bg-red-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+                      <Skull className="h-4 w-4" /> Ver jefe final · Nivel 20
+                    </Link>
+                  )}
+                </div>
               </div>
             </article>
           ))}
