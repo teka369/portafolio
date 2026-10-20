@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, RotateCcw, Skull, Maximize2, Minimize2 } from 'lucide-react'
+import { ArrowLeft, RotateCcw, Skull, Trophy, Maximize2, Minimize2 } from 'lucide-react'
 
 interface GameObject {
   x: number
@@ -31,6 +31,8 @@ interface GameState {
   isRunning: boolean
   isPaused: boolean
   isGameOver: boolean
+  isVictory: boolean
+  finalBossSpawned: boolean
   isBossComing: boolean
   bossIntroText: string
   difficulty: number
@@ -69,6 +71,8 @@ export default function SpaceDefenderPage() {
     isRunning: false,
     isPaused: false,
     isGameOver: false,
+    isVictory: false,
+    finalBossSpawned: false,
     isBossComing: false,
     bossIntroText: '',
     difficulty: 1,
@@ -82,6 +86,7 @@ export default function SpaceDefenderPage() {
   const lastShotRef = useRef<number>(0)
   const lastSpawnRef = useRef<number>(0)
   const lastLevelUpRef = useRef<number>(0)
+  const lastUiRefreshRef = useRef<number>(0)
 
   const toggleFullscreen = useCallback(() => {
     const canvas = canvasRef.current
@@ -164,7 +169,7 @@ export default function SpaceDefenderPage() {
     }
   }, [])
 
-  const startGame = useCallback(() => {
+  const startGame = useCallback((startAtFinalBoss = false) => {
     const state = gameStateRef.current
     state.playerX = CANVAS_WIDTH / 2 - PLAYER_WIDTH / 2
     state.targetX = CANVAS_WIDTH / 2 - PLAYER_WIDTH / 2
@@ -172,21 +177,24 @@ export default function SpaceDefenderPage() {
     state.enemies = []
     state.particles = []
     state.score = 0
-    state.lives = 3
+    state.lives = startAtFinalBoss ? 5 : 3
     state.isRunning = true
     state.isPaused = false
     state.isGameOver = false
+    state.isVictory = false
+    state.finalBossSpawned = startAtFinalBoss
     state.isBossComing = false
     state.bossIntroText = ''
-    state.difficulty = 1
-    state.level = 1
-    state.shield = false
-    state.doubleShot = false
-    state.invulnerable = 0
-    lastSpawnRef.current = 0
-    lastLevelUpRef.current = 0
+    state.difficulty = startAtFinalBoss ? 7.65 : 1
+    state.level = startAtFinalBoss ? 20 : 1
+    state.shield = startAtFinalBoss
+    state.doubleShot = startAtFinalBoss
+    state.invulnerable = startAtFinalBoss ? 120 : 0
+    lastSpawnRef.current = performance.now()
+    lastLevelUpRef.current = performance.now()
+    if (startAtFinalBoss) state.enemies.push(spawnEnemy(state.difficulty, state.level, true))
     forceUpdate(n => n + 1)
-  }, [])
+  }, [spawnEnemy])
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current
@@ -524,18 +532,19 @@ export default function SpaceDefenderPage() {
         const spawnRate = Math.max(500 - state.level * 25, 150)
         
         // Check for super boss spawn
-        if (state.level >= 20 && !state.enemies.some(e => e.type === 'superboss')) {
+        if (state.level >= 20 && !state.finalBossSpawned) {
           if (!state.isBossComing) {
             state.isBossComing = true
-            state.bossIntroText = '⚠️ SUPER BOSS APPROACHING ⚠️'
+            state.bossIntroText = '⚠️ JEFE FINAL APROXIMÁNDOSE ⚠️'
           }
           if (timestamp - lastSpawnRef.current > 3000) {
             state.enemies.push(spawnEnemy(state.difficulty, state.level, true))
+            state.finalBossSpawned = true
             state.isBossComing = false
             state.bossIntroText = ''
             lastSpawnRef.current = timestamp
           }
-        } else if (timestamp - lastSpawnRef.current > spawnRate) {
+        } else if (state.level < 20 && timestamp - lastSpawnRef.current > spawnRate) {
           state.enemies.push(spawnEnemy(state.difficulty, state.level))
           lastSpawnRef.current = timestamp
         }
@@ -561,8 +570,13 @@ export default function SpaceDefenderPage() {
               bullet.y = -100
 
               if (enemy.health <= 0) {
-                createExplosion(enemy.x + enemy.width / 2, enemy.y + enemy.height / 2, enemy.color || '#fff', 
+                createExplosion(enemy.x + enemy.width / 2, enemy.y + enemy.height / 2, enemy.color || '#fff',
                   enemy.type === 'superboss' ? 60 : enemy.type === 'boss' ? 40 : 25)
+                if (enemy.type === 'superboss') {
+                  state.isVictory = true
+                  state.isRunning = false
+                  state.isPaused = false
+                }
                 state.score += ENEMY_TYPES.find(t => t.type === enemy.type)?.score || 10
                 
                 if (Math.random() < 0.12) {
@@ -672,7 +686,7 @@ export default function SpaceDefenderPage() {
         const x = (i * 137) % CANVAS_WIDTH
         const y = (i * 89 + timestamp * 0.01) % CANVAS_HEIGHT
         ctx.beginPath()
-        ctx.arc(x, y, Math.random() > 0.9 ? 1.5 : 0.5, 0, Math.PI * 2)
+        ctx.arc(x, y, i % 11 === 0 ? 1.5 : 0.5, 0, Math.PI * 2)
         ctx.fill()
       }
 
@@ -757,7 +771,7 @@ export default function SpaceDefenderPage() {
         ctx.fillStyle = '#00ff4133'
         ctx.beginPath()
         ctx.moveTo(state.playerX + PLAYER_WIDTH * 0.3, playerY + PLAYER_HEIGHT * 0.8)
-        ctx.lineTo(state.playerX + PLAYER_WIDTH / 2, playerY + PLAYER_HEIGHT + Math.random() * 18)
+        ctx.lineTo(state.playerX + PLAYER_WIDTH / 2, playerY + PLAYER_HEIGHT + 8 + Math.sin(timestamp * 0.02) * 5)
         ctx.lineTo(state.playerX + PLAYER_WIDTH * 0.7, playerY + PLAYER_HEIGHT * 0.8)
         ctx.closePath()
         ctx.fill()
@@ -798,7 +812,10 @@ export default function SpaceDefenderPage() {
       ctx.textAlign = 'center'
       ctx.fillText(`DIFFICULTY: ${state.difficulty.toFixed(1)}x`, CANVAS_WIDTH / 2, CANVAS_HEIGHT - 20)
 
-      forceUpdate(n => n + 1)
+      if (timestamp - lastUiRefreshRef.current >= 100) {
+        lastUiRefreshRef.current = timestamp
+        forceUpdate(n => n + 1)
+      }
       requestRef.current = requestAnimationFrame(gameLoop)
     }
 
@@ -815,7 +832,9 @@ export default function SpaceDefenderPage() {
         e.preventDefault()
         const state = gameStateRef.current
         
-        if (!state.isRunning && !state.isGameOver) {
+        if (state.isVictory || state.isGameOver) {
+          startGame()
+        } else if (!state.isRunning) {
           state.isRunning = true
         } else if (state.isRunning && !state.isGameOver) {
           state.isPaused = !state.isPaused
@@ -828,6 +847,11 @@ export default function SpaceDefenderPage() {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [startGame])
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('level') === '20') startGame(true)
   }, [startGame])
 
   const state = gameStateRef.current
@@ -849,10 +873,17 @@ export default function SpaceDefenderPage() {
             <span className="text-red-500">Space</span> <span className="text-neon">Defender</span>
           </h1>
           <p className="text-muted-foreground text-sm">
-            {!state.isRunning && !state.isGameOver ? 'Presiona ESPACIO o toca la pantalla para comenzar' : 
+            {!state.isRunning && !state.isGameOver && !state.isVictory ? 'Presiona ESPACIO o toca la pantalla para comenzar' :
              state.isPaused ? 'Juego pausado - Presiona ESPACIO para continuar' :
-             state.isGameOver ? `¡Game Over! Score: ${state.score} - Presiona ESPACIO para jugar de nuevo` : 'Desliza el dedo para moverte y disparar'}
+             state.isVictory ? '¡Has derrotado al jefe final del nivel 20!' :
+             state.isGameOver ? `¡Game Over! Score: ${state.score} - Nivel: ${state.level}` : 'Desliza el dedo para moverte y disparar'}
           </p>
+          {!state.isRunning && !state.isGameOver && !state.isVictory && (
+            <div className="mt-4 flex flex-wrap justify-center gap-3">
+              <button onClick={() => startGame()} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border bg-card px-4 py-2 font-mono text-xs text-foreground transition-colors hover:border-neon/40 hover:text-neon">Iniciar desde nivel 1</button>
+              <button onClick={() => startGame(true)} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-2 font-mono text-xs font-semibold text-red-300 transition-colors hover:border-red-400 hover:bg-red-500/15"><Skull className="h-4 w-4" /> Ir directo al nivel 20 · Jefe final</button>
+            </div>
+          )}
         </div>
 
         <div className="relative mx-auto max-w-[1200px]">
@@ -880,7 +911,7 @@ export default function SpaceDefenderPage() {
             {isFullscreen ? <Minimize2 className="w-5 h-5" /> : <Maximize2 className="w-5 h-5" />}
           </button>
 
-          {!state.isRunning && !state.isGameOver && (
+          {!state.isRunning && !state.isGameOver && !state.isVictory && (
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/60 rounded-xl">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-red-500 flex items-center justify-center animate-pulse">
@@ -899,8 +930,20 @@ export default function SpaceDefenderPage() {
             </div>
           )}
 
-          {state.isGameOver && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/80 rounded-xl">
+          {state.isVictory && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center rounded-xl bg-black/85 p-5">
+              <div className="max-w-md text-center">
+                <Trophy className="mx-auto mb-4 h-20 w-20 text-neon" />
+                <p className="font-mono text-2xl font-bold text-neon sm:text-3xl">JEFE FINAL DERROTADO</p>
+                <p className="mt-3 font-mono text-sm text-white/75">Nivel 20 completado · Puntuación: {state.score}</p>
+                <button onClick={() => startGame(true)} className="mt-6 inline-flex items-center gap-2 rounded-md bg-neon px-6 py-3 font-mono text-sm font-semibold text-primary-foreground transition hover:brightness-110"><RotateCcw className="h-4 w-4" /> Volver a enfrentar al jefe</button>
+                <button onClick={() => startGame()} className="mt-3 block w-full rounded-md border border-white/20 px-6 py-3 font-mono text-xs text-white/80 transition hover:border-neon/50 hover:text-neon">Volver al nivel 1</button>
+              </div>
+            </div>
+          )}
+
+          {state.isGameOver && !state.isVictory && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/80 rounded-xl">
               <div className="text-center">
                 <Skull className="w-20 h-20 mx-auto mb-4 text-red-500" />
                 <p className="font-mono text-3xl text-red-500 mb-2">GAME OVER</p>
