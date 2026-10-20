@@ -304,8 +304,6 @@ export default function PongPage() {
 
   const state = gameStateRef.current
 
-  const state = gameStateRef.current
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
