@@ -73,6 +73,7 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
   const antenna = useRef<THREE.Group>(null)
   const leftEye = useRef<THREE.Mesh>(null)
   const rightEye = useRef<THREE.Mesh>(null)
+  const chestCore = useRef<THREE.Mesh>(null)
   const phaseSeen = useRef<IntroPhase>(phase)
   const dialogueStepSeen = useRef(dialogueStep)
   const phaseStartedAt = useRef(0)
@@ -240,6 +241,11 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
       antenna.current.rotation.z = Math.sin(now * 2.2) * 0.09
       antenna.current.rotation.x = Math.sin(now * 1.4) * 0.035
     }
+    if (chestCore.current) {
+      // A soft reactor pulse gives the character a focal point without relying on screen effects.
+      const pulse = 1 + Math.sin(now * (phase === "exit" ? 7 : 3.4)) * (phase === "greeting" ? 0.07 : 0.12)
+      chestCore.current.scale.set(pulse, pulse, 1)
+    }
 
     // Procedural blink without interval timers or state updates in the render loop.
     const blinkCycle = now % 3.4
@@ -255,7 +261,7 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
         <boxGeometry args={[1.12, 1.25, 0.72]} />
         <meshStandardMaterial color="#0a1020" metalness={0.78} roughness={0.24} />
       </mesh>
-      <mesh position={[0, 0.19, 0.371]}>
+      <mesh ref={chestCore} position={[0, 0.19, 0.371]}>
         <circleGeometry args={[0.19, 32]} />
         <meshBasicMaterial color="#00ff78" toneMapped={false} />
       </mesh>
