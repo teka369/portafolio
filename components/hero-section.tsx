@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useCallback } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Github, Gamepad2, ArrowUpRight } from "lucide-react"
 
 interface TerminalLine {
   text: string
@@ -192,17 +192,19 @@ export function HeroSection() {
       {/* Fullstack Developer subtitle */}
       <div className={`relative z-10 text-center mb-2 transition-all duration-700 ${showContent ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}>
         <p className="font-mono text-sm text-neon tracking-[0.3em] uppercase">
-          {"// Fullstack Developer"}
+          {"// Desarrollador de software · Fullstack"}
         </p>
       </div>
 
-      {/* Title: Construyo el Backend del futuro */}
-      <div className={`relative z-10 text-center transition-all duration-1000 delay-100 ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight text-balance">
-          Construyo el
-          <span className="block text-neon animate-neon-pulse mt-1">Backend</span>
-          Profesional
+      {/* Mensaje principal: propuesta de valor clara */}
+      <div className={`relative z-10 max-w-4xl text-center transition-all duration-1000 delay-100 ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-[1.08] tracking-tight text-balance">
+          Construyo software
+          <span className="block text-neon animate-neon-pulse mt-2">útil, sólido y escalable.</span>
         </h1>
+        <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mt-5 leading-relaxed">
+          Soy Juan David Guarin Romero, desarrollador fullstack con especial interés en backend, APIs, bases de datos y experiencias web bien diseñadas.
+        </p>
       </div>
 
       {/* Terminal window - directly below the title */}
@@ -213,11 +215,11 @@ export function HeroSection() {
             <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
             <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
             <div className="w-3 h-3 rounded-full bg-neon/70" />
-            <span className="ml-3 font-mono text-xs text-muted-foreground">terminal@portfolio ~ %</span>
+            <span className="ml-3 font-mono text-xs text-muted-foreground">demo@juandavid ~ %</span>
             <div className="flex-1" />
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-neon rounded-full animate-[neonPulse_2s_ease-in-out_infinite]" />
-              <span className="font-mono text-[10px] text-neon/60">LIVE</span>
+              <span className="font-mono text-[10px] text-neon/60">DEMO</span>
             </div>
           </div>
           {/* Terminal body */}
@@ -245,16 +247,18 @@ export function HeroSection() {
 
       {/* Description text - below terminal */}
       <div className={`relative z-10 text-center transition-all duration-1000 delay-500 ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          Desarrollador fullstack apasionado por JavaScript, arquitectura de servidores y sistemas
-          escalables. Transformo ideas en aplicaciones robustas y de alto rendimiento.
+        <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          Me gusta resolver problemas de principio a fin: desde la estructura de datos y la lógica del servidor hasta los detalles de una interfaz clara y accesible.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a href="#projects" className="inline-flex items-center gap-2 px-6 py-3 bg-neon text-primary-foreground font-mono text-sm font-semibold rounded-md hover:bg-neon-dim transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.4)]">
-            {">"} Ver proyectos
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#projects" className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-neon px-5 py-3 font-mono text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(0,255,65,0.25)]">
+            Ver proyectos <ArrowUpRight className="h-4 w-4" />
           </a>
-          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 border border-neon/30 text-neon font-mono text-sm font-semibold rounded-md hover:bg-neon/10 transition-all duration-300">
-            Contacto
+          <a href="/games" className="inline-flex min-h-12 items-center gap-2 rounded-lg border border-border bg-card/50 px-5 py-3 font-mono text-sm text-foreground transition-all duration-300 hover:border-neon/35 hover:text-neon">
+            <Gamepad2 className="h-4 w-4" /> Zona de juegos
+          </a>
+          <a href="https://github.com/teka369" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-lg border border-border bg-card/50 px-5 py-3 font-mono text-sm text-foreground transition-all duration-300 hover:border-neon/35 hover:text-neon">
+            <Github className="h-4 w-4" /> GitHub
           </a>
         </div>
       </div>
