@@ -4,6 +4,7 @@ import { useRef, useState } from "react"
 import { useInView } from "@/hooks/use-in-view"
 import { ArrowDownToLine, Code2, Database, GitBranch, Server, Sparkles } from "lucide-react"
 import Image from "next/image"
+import profileImage from "@/juandavid.png"
 
 const focusAreas = [
   {
@@ -54,7 +55,7 @@ export function AboutSection() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-card">
                 {!imageFailed ? (
                   <Image
-                    src="/juandavid.png"
+                    src={profileImage}
                     alt="Retrato de Juan David"
                     fill
                     priority={false}

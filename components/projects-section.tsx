@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import { useInView } from "@/hooks/use-in-view"
-import { ExternalLink, X } from "lucide-react"
+import { ExternalLink, Github, X } from "lucide-react"
 import Image from "next/image"
 
 const projects = [
@@ -31,6 +31,7 @@ const projects = [
     techs: ["Next.js", "TypeScript", "Tailwind", "NestJS", "Prisma", "PostgreSQL", "Dexie"],
     image: "/dulcecalle.png",
     live: "https://dulcecalle.vercel.app",
+    source: "https://github.com/teka369/dulcecalle",
     comingSoon: false,
   },
   {
@@ -95,15 +96,16 @@ export function ProjectsSection() {
                   <h3 className="text-base font-bold text-foreground group-hover:text-neon transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-neon text-primary-foreground font-mono text-xs font-semibold rounded-md hover:bg-neon-dim transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.4)]"
-                  >
-                    <ExternalLink className="h-3 w-3" />
-                    Visitar
-                  </a>
+                  <div className="flex flex-wrap gap-2">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-2 bg-neon text-primary-foreground font-mono text-xs font-semibold rounded-md hover:bg-neon-dim transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.4)]">
+                      <ExternalLink className="h-3 w-3" /> Ver proyecto
+                    </a>
+                    {"source" in project && project.source && (
+                      <a href={project.source} target="_blank" rel="noopener noreferrer" aria-label={"Ver código de " + project.title + " en GitHub"} className="inline-flex items-center gap-2 px-3 py-2 border border-border text-muted-foreground font-mono text-xs rounded-md hover:border-neon/40 hover:text-neon transition-colors">
+                        <Github className="h-3 w-3" /> Código
+                      </a>
+                    )}
+                  </div>
                 </div>
 
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
