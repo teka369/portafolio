@@ -68,6 +68,8 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
   const leftForearm = useRef<THREE.Group>(null)
   const rightHand = useRef<THREE.Group>(null)
   const leftHand = useRef<THREE.Group>(null)
+  const rightLeg = useRef<THREE.Group>(null)
+  const leftLeg = useRef<THREE.Group>(null)
   const antenna = useRef<THREE.Group>(null)
   const leftEye = useRef<THREE.Mesh>(null)
   const rightEye = useRef<THREE.Mesh>(null)
@@ -91,6 +93,11 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
     let targetX = 0
     let targetZ = 0
     let targetScale = 0.9
+    let targetRoll = 0
+    let rightLegX = 0
+    let leftLegX = 0
+    let rightElbowZ = 0
+    let leftElbowZ = 0
     let rightArmZ = 0.04
     let leftArmZ = -0.04
     let rightArmX = 0
@@ -108,14 +115,28 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
       targetY = THREE.MathUtils.lerp(-0.3, -0.3, enter) + Math.sin(enter * Math.PI) * 0.12
       targetY += local > 1.85 ? -Math.sin(((local - 1.85) / 0.6) * Math.PI) * 0.06 : 0
       targetX = THREE.MathUtils.lerp(-0.45, 0, enter)
-      robot.rotation.y = THREE.MathUtils.damp(robot.rotation.y, THREE.MathUtils.lerp(0, 0, enter), 5, delta)
+      // A couple of small, readable steps make the arrival feel intentional, not like a sliding statue.
+      const walk = (1 - enter) * Math.sin(local * 8.5)
+      rightLegX = walk * 0.34
+      leftLegX = -walk * 0.34
+      targetRoll = Math.sin(local * 4.2) * 0.035 * (1 - enter)
+      rightElbowZ = -0.12 * (1 - enter)
+      leftElbowZ = 0.12 * (1 - enter)
+      robot.rotation.y = THREE.MathUtils.damp(robot.rotation.y, 0, 5, delta)
       rightArmZ = THREE.MathUtils.lerp(0.3, 0.04, enter)
       leftArmZ = THREE.MathUtils.lerp(-0.3, -0.04, enter)
     } else if (phase === "greeting") {
       // Idle is alive but restrained: breathing, small head movements and responsive gestures.
-      targetY = Math.sin(local * 1.8) * 0.035
+      targetY = -0.3 + Math.sin(local * 2.15) * 0.035
+      targetZ = 1.05
       targetX = Math.sin(local * 1.15) * 0.018
+      targetRoll = Math.sin(local * 1.1) * 0.022
       targetScale = 0.9
+      // Tiny weight shifts in the feet and elbows keep the idle alive without looking jittery.
+      rightLegX = Math.sin(local * 1.6) * 0.025
+      leftLegX = -Math.sin(local * 1.6) * 0.025
+      rightElbowZ = -0.035
+      leftElbowZ = 0.035
       headY = Math.sin(local * 0.8) * 0.045
       headX = Math.sin(local * 1.35) * 0.025
 
@@ -127,6 +148,7 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
         rightArmZ = THREE.MathUtils.lerp(rightArmZ, 0.04, lower)
         rightArmX = 0.08
         rightWristZ = local > 0.48 && local < 2.0 ? Math.sin((local - 0.48) * 12) * 0.24 : 0
+        rightElbowZ = local > 0.48 && local < 2.0 ? -0.18 : -0.035
         leftArmZ = -0.04
         leftWristZ = 0.02
         headY += Math.sin(local * 2.5) * 0.025
@@ -136,7 +158,9 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
         rightArmZ = THREE.MathUtils.lerp(0.04, -0.82, gesture)
         rightArmX = -0.35 * gesture
         rightWristZ = -0.12 * gesture
+        rightElbowZ = -0.16 * gesture
         leftArmZ = THREE.MathUtils.lerp(-0.04, 0.28, gesture * 0.55)
+        leftElbowZ = 0.08 * gesture
         headX = -0.07 * (1 - smooth01((local - 0.28) / 0.4)) + Math.sin(local * 1.2) * 0.018
       } else {
         // Open invitation: both arms open toward the portfolio.
@@ -149,6 +173,8 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
         leftArmX = -0.22 * gesture
         rightWristZ = -0.1 * gesture
         leftWristZ = 0.1 * gesture
+        rightElbowZ = -0.12 * gesture
+        leftElbowZ = 0.12 * gesture
       }
 
       // The eyes and face remain aimed at the camera; head motion is intentionally subtle.
@@ -159,6 +185,12 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
       targetZ = THREE.MathUtils.lerp(1.05, -2.25, exit)
       targetY = THREE.MathUtils.lerp(-0.3, -0.3, exit)
       targetX = THREE.MathUtils.lerp(0, 0.12, exit)
+      targetRoll = Math.sin(local * 4.5) * 0.025 * (1 - exit)
+      const walkOut = smooth01(local / 0.45) * (1 - exit) * Math.sin(local * 8)
+      rightLegX = walkOut * 0.3
+      leftLegX = -walkOut * 0.3
+      rightElbowZ = -0.12
+      leftElbowZ = 0.08
       targetScale = THREE.MathUtils.lerp(0.9, 0.08, exit)
       robot.rotation.y = THREE.MathUtils.damp(robot.rotation.y, THREE.MathUtils.lerp(0, -0.68, turn), 4.5, delta)
       rightArmZ = THREE.MathUtils.lerp(0.04, -1.75, smooth01(local / 0.42))
@@ -173,6 +205,9 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
     robot.position.z = THREE.MathUtils.damp(robot.position.z, targetZ, 5.5, delta)
     robot.scale.setScalar(THREE.MathUtils.damp(robot.scale.x, targetScale, 5.5, delta))
     robot.rotation.x = THREE.MathUtils.damp(robot.rotation.x, targetX, 5.5, delta)
+    robot.rotation.z = THREE.MathUtils.damp(robot.rotation.z, targetRoll, 5, delta)
+    if (rightLeg.current) rightLeg.current.rotation.x = THREE.MathUtils.damp(rightLeg.current.rotation.x, rightLegX, 7, delta)
+    if (leftLeg.current) leftLeg.current.rotation.x = THREE.MathUtils.damp(leftLeg.current.rotation.x, leftLegX, 7, delta)
 
     if (head.current) {
       head.current.rotation.y = THREE.MathUtils.damp(head.current.rotation.y, headY, 5, delta)
@@ -188,10 +223,10 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
       leftShoulder.current.rotation.x = THREE.MathUtils.damp(leftShoulder.current.rotation.x, leftArmX, 7, delta)
     }
     if (rightForearm.current) {
-      rightForearm.current.rotation.z = THREE.MathUtils.damp(rightForearm.current.rotation.z, rightWristZ * 0.45, 10, delta)
+      rightForearm.current.rotation.z = THREE.MathUtils.damp(rightForearm.current.rotation.z, rightElbowZ + rightWristZ * 0.25, 9, delta)
     }
     if (leftForearm.current) {
-      leftForearm.current.rotation.z = THREE.MathUtils.damp(leftForearm.current.rotation.z, leftWristZ * 0.45, 10, delta)
+      leftForearm.current.rotation.z = THREE.MathUtils.damp(leftForearm.current.rotation.z, leftElbowZ + leftWristZ * 0.25, 9, delta)
     }
     if (rightHand.current) {
       rightHand.current.rotation.z = THREE.MathUtils.damp(rightHand.current.rotation.z, rightWristZ, 10, delta)
@@ -347,7 +382,7 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
       </group>
 
       {/* Legs */}
-      <group position={[-0.3, -0.62, 0]}>
+      <group ref={leftLeg} position={[-0.3, -0.62, 0]}>
         <mesh position={[0, -0.14, 0]} castShadow>
           <boxGeometry args={[0.3, 0.48, 0.32]} />
           <meshStandardMaterial color="#0c1423" metalness={0.76} roughness={0.24} />
@@ -357,7 +392,7 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
           <meshStandardMaterial color="#18263a" metalness={0.68} roughness={0.3} />
         </mesh>
       </group>
-      <group position={[0.3, -0.62, 0]}>
+      <group ref={rightLeg} position={[0.3, -0.62, 0]}>
         <mesh position={[0, -0.14, 0]} castShadow>
           <boxGeometry args={[0.3, 0.48, 0.32]} />
           <meshStandardMaterial color="#0c1423" metalness={0.76} roughness={0.24} />
@@ -395,7 +430,7 @@ function CameraRig({ phase }: { phase: IntroPhase }) {
     } else if (phase === "greeting") {
       x = Math.sin(local * 0.42) * 0.035
       y = 0.45 + Math.sin(local * 0.65) * 0.018
-      z = 4.8
+      z = 5.9
     } else {
       const p = smooth01(local / EXIT_DURATION)
       x = THREE.MathUtils.lerp(0, 0.12, p)
