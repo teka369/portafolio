@@ -25,12 +25,12 @@ const projects = [
     comingSoon: false,
   },
   {
-    title: "Sunny Party Rentals LLC",
+    title: "Dulce Calle",
     description:
-      "Plataforma de venta y renta de productos para fiestas, bodas y eventos. Sistema completo con catalogo de productos y gestion de inventario.",
-    techs: ["React", "Tailwind", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
-    image: "/sunnyparty.png",
-    live: "https://sunnypartyrentalsllc.com",
+      "PWA de gestión de ventas, inventario, clientes y fiados para dulcería de barrio. Soporte offline con sincronización automática al recuperar conexión.",
+    techs: ["Next.js", "TypeScript", "Tailwind", "NestJS", "Prisma", "PostgreSQL", "Dexie"],
+    image: "/dulcecalle.png",
+    live: "https://dulcecalle.vercel.app",
     comingSoon: false,
   },
   {
