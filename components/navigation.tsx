@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Terminal, Menu, X, Sun, Moon } from "lucide-react"
+import { Terminal, Menu, X, Sun, Moon, Gamepad2 } from "lucide-react"
 import { useTheme } from "next-themes"
 
 const navItems = [
@@ -103,7 +103,7 @@ export function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile nav - NO games link */}
+      {/* Navegación móvil, con acceso también a los juegos */}
       {mobileOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-neon/10">
           <ul className="flex flex-col px-6 py-4 gap-4">
@@ -116,6 +116,13 @@ export function Navigation() {
                 >
                   <span className="text-neon/60 mr-2">{"$"}</span>
                   {item.label}
+                </a>
+              </li>
+            ))}
+            {desktopOnlyItems.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="inline-flex items-center gap-2 font-mono text-sm text-neon transition-colors hover:text-foreground" onClick={() => setMobileOpen(false)}>
+                  <Gamepad2 className="h-4 w-4" />{item.label}
                 </a>
               </li>
             ))}
