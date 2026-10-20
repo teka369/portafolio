@@ -355,7 +355,7 @@ export default function PongPage() {
 
           {/* Overlay messages */}
           {!state.isRunning && !state.isGameOver && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-xl">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/50 rounded-xl">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-neon flex items-center justify-center animate-pulse">
                   <span className="text-4xl">🎮</span>
