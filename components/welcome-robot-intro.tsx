@@ -287,12 +287,22 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
             <meshStandardMaterial color="#101a2b" metalness={0.72} roughness={0.24} />
           </mesh>
           <group ref={leftHand} position={[0, -0.38, 0]}>
-            <mesh>
-              <sphereGeometry args={[0.14, 18, 14]} />
+            <mesh position={[0, 0, 0.09]} castShadow>
+              <boxGeometry args={[0.22, 0.25, 0.075]} />
               <meshStandardMaterial color="#d2e8e5" metalness={0.3} roughness={0.28} />
             </mesh>
-            <mesh position={[0, 0, 0.105]}>
-              <sphereGeometry args={[0.055, 12, 8]} />
+            {[-0.082, -0.027, 0.027, 0.082].map((x, index) => (
+              <mesh key={index} position={[x, 0.17, 0.09]} castShadow>
+                <boxGeometry args={[0.038, 0.13 - Math.abs(index - 1.5) * 0.012, 0.055]} />
+                <meshStandardMaterial color="#d2e8e5" metalness={0.3} roughness={0.28} />
+              </mesh>
+            ))}
+            <mesh position={[0.15, -0.025, 0.09]} rotation={[0, 0, -0.55]} castShadow>
+              <boxGeometry args={[0.055, 0.13, 0.055]} />
+              <meshStandardMaterial color="#d2e8e5" metalness={0.3} roughness={0.28} />
+            </mesh>
+            <mesh position={[0, -0.01, 0.135]}>
+              <sphereGeometry args={[0.025, 12, 8]} />
               <meshBasicMaterial color="#00ff78" toneMapped={false} />
             </mesh>
           </group>
@@ -314,12 +324,22 @@ function Robot({ phase, dialogueStep }: { phase: IntroPhase; dialogueStep: numbe
             <meshStandardMaterial color="#101a2b" metalness={0.72} roughness={0.24} />
           </mesh>
           <group ref={rightHand} position={[0, -0.38, 0]}>
-            <mesh>
-              <sphereGeometry args={[0.14, 18, 14]} />
+            <mesh position={[0, 0, 0.09]} castShadow>
+              <boxGeometry args={[0.22, 0.25, 0.075]} />
               <meshStandardMaterial color="#d2e8e5" metalness={0.3} roughness={0.28} />
             </mesh>
-            <mesh position={[0, 0, 0.105]}>
-              <sphereGeometry args={[0.055, 12, 8]} />
+            {[-0.082, -0.027, 0.027, 0.082].map((x, index) => (
+              <mesh key={index} position={[x, 0.17, 0.09]} castShadow>
+                <boxGeometry args={[0.038, 0.13 - Math.abs(index - 1.5) * 0.012, 0.055]} />
+                <meshStandardMaterial color="#d2e8e5" metalness={0.3} roughness={0.28} />
+              </mesh>
+            ))}
+            <mesh position={[0.15, -0.025, 0.09]} rotation={[0, 0, -0.55]} castShadow>
+              <boxGeometry args={[0.055, 0.13, 0.055]} />
+              <meshStandardMaterial color="#d2e8e5" metalness={0.3} roughness={0.28} />
+            </mesh>
+            <mesh position={[0, -0.01, 0.135]}>
+              <sphereGeometry args={[0.025, 12, 8]} />
               <meshBasicMaterial color="#00ff78" toneMapped={false} />
             </mesh>
           </group>
