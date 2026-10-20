@@ -5,7 +5,7 @@ import { Float, Sparkles, Environment, ContactShadows } from "@react-three/drei"
 import { useRef, useState, useEffect } from "react"
 import * as THREE from "three"
 
-function Robot() {
+function Robot({ isMobile }: { isMobile: boolean }) {
   const group = useRef<THREE.Group>(null)
   const leftArm = useRef<THREE.Group>(null)
   const rightArm = useRef<THREE.Group>(null)
@@ -37,8 +37,10 @@ function Robot() {
     }
   })
 
+  const scale = isMobile ? 1.05 : 1.4
+
   return (
-    <group ref={group} scale={1.4}>
+    <group ref={group} scale={scale}>
       {/* Body */}
       <mesh position={[0, 0.2, 0]} castShadow>
         <boxGeometry args={[1.1, 1.2, 0.7]} />
@@ -108,12 +110,20 @@ function Robot() {
 export function WelcomeRobotIntro({ onComplete }: { onComplete: () => void }) {
   const [bubbleIndex, setBubbleIndex] = useState(0)
   const [visible, setVisible] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   const bubbles = [
     "Hola...",
     "¿Cómo estás?",
     "¿Listo para la aventura?",
   ]
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener("resize", check)
+    return () => window.removeEventListener("resize", check)
+  }, [])
 
   useEffect(() => {
     if (bubbleIndex < bubbles.length) {
@@ -134,21 +144,25 @@ export function WelcomeRobotIntro({ onComplete }: { onComplete: () => void }) {
     <div className="fixed inset-0 z-[100] bg-black flex items-center justify-center transition-opacity duration-700">
       {/* 3D Canvas */}
       <Canvas
-        camera={{ position: [0, 0.8, 4.5], fov: 45 }}
+        camera={{
+          position: isMobile ? [0, 0.6, 5.2] : [0, 0.8, 4.5],
+          fov: isMobile ? 50 : 45,
+        }}
         className="absolute inset-0"
-        dpr={[1, 2]}
+        dpr={isMobile ? [1, 1.5] : [1, 2]}
+        gl={{ antialias: !isMobile }}
       >
         <ambientLight intensity={0.4} />
         <pointLight position={[4, 4, 4]} intensity={1.2} color="#00ff41" />
         <pointLight position={[-3, 2, 2]} intensity={0.6} color="#22d3ee" />
         <Environment preset="night" />
         <Float speed={2} rotationIntensity={0.4} floatIntensity={0.6}>
-          <Robot />
+          <Robot isMobile={isMobile} />
         </Float>
         <Sparkles
-          count={80}
-          scale={[8, 6, 4]}
-          size={2}
+          count={isMobile ? 40 : 80}
+          scale={isMobile ? [6, 5, 3] : [8, 6, 4]}
+          size={isMobile ? 1.5 : 2}
           speed={0.4}
           color="#00ff41"
           opacity={0.6}
@@ -157,11 +171,11 @@ export function WelcomeRobotIntro({ onComplete }: { onComplete: () => void }) {
       </Canvas>
 
       {/* Speech bubbles */}
-      <div className="absolute top-[18%] left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 pointer-events-none">
+      <div className="absolute top-[12%] sm:top-[18%] left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 sm:gap-3 pointer-events-none px-4 w-full max-w-md">
         {bubbles.slice(0, bubbleIndex).map((text, i) => (
           <div
             key={i}
-            className="bg-black/70 border border-neon/40 backdrop-blur-md text-neon font-mono text-lg sm:text-xl px-6 py-3 rounded-2xl shadow-[0_0_30px_rgba(0,255,65,0.25)] animate-fade-in-up"
+            className="bg-black/70 border border-neon/40 backdrop-blur-md text-neon font-mono text-base sm:text-lg md:text-xl px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl shadow-[0_0_30px_rgba(0,255,65,0.25)] animate-fade-in-up text-center"
             style={{ animationDelay: `${i * 0.1}s` }}
           >
             {text}
@@ -175,12 +189,12 @@ export function WelcomeRobotIntro({ onComplete }: { onComplete: () => void }) {
           setVisible(false)
           setTimeout(onComplete, 300)
         }}
-        className="absolute bottom-8 right-8 font-mono text-xs text-muted-foreground hover:text-neon transition-colors z-20"
+        className="absolute bottom-6 sm:bottom-8 right-4 sm:right-8 font-mono text-xs sm:text-sm text-muted-foreground hover:text-neon transition-colors z-20 px-3 py-2 bg-black/40 rounded-md"
       >
         Saltar →
       </button>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] text-neon/40 tracking-widest">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 font-mono text-[9px] sm:text-[10px] text-neon/40 tracking-widest">
         ROBOTITO v1.0 · INICIALIZANDO
       </div>
     </div>
