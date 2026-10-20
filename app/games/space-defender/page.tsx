@@ -187,7 +187,7 @@ export default function SpaceDefenderPage() {
     state.bossIntroText = ''
     state.difficulty = startAtFinalBoss ? 7.65 : 1
     state.level = startAtFinalBoss ? 20 : 1
-    state.shield = startAtFinalBoss
+    state.shield = false
     state.doubleShot = startAtFinalBoss
     state.invulnerable = startAtFinalBoss ? 120 : 0
     lastSpawnRef.current = performance.now()
