@@ -832,8 +832,6 @@ export default function SpaceDefenderPage() {
 
   const state = gameStateRef.current
 
-  const state = gameStateRef.current
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border/50">
