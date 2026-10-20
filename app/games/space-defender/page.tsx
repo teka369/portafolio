@@ -881,7 +881,7 @@ export default function SpaceDefenderPage() {
           </button>
 
           {!state.isRunning && !state.isGameOver && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/60 rounded-xl">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/60 rounded-xl">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-red-500 flex items-center justify-center animate-pulse">
                   <span className="text-5xl">🚀</span>
